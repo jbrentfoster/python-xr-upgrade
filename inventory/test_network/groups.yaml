@@ -1,0 +1,30 @@
+---
+defaults:
+  domain: empire.space
+  contact: Unknown
+
+8000_routers:
+  username: cisco
+  password: cisco123
+  nornir_nos: iosxr
+  contact: Router team
+  platform: iosxr_netconf
+  ssh_config:
+    ignore_unknown_hosts: True
+  data:
+    xr_7: True
+    os_ver: 7.11.2
+    image_files:
+      - 8000-x86_64-7.3.3-CSCwd71524.tgz
+      - 8000-x64-7.11.1.iso
+      - 8000-x64-7.11.2.iso
+    http_server_ip: 192.168.122.71
+    install_commit_command: "install commit synchronous"
+    install_commands:
+      - "install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous"
+      - "install replace /harddisk:/8000-x64-7.11.1.iso noprompt reload commit synchronous"
+      - "install replace /harddisk:/8000-x64-7.11.2.iso noprompt reload commit synchronous"
+
+switches:
+  nos: ios
+  contact: Switch group

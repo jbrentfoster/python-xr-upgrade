@@ -1,0 +1,34 @@
+---
+c8k-1:
+  hostname: 172.26.228.238
+  port: 38295
+  groups:
+    - 8000_routers
+  connection_options:
+    napalm:
+      extras:
+        optional_args: {'allow_agent': True}
+    netmiko:
+      extras:
+        conn_timeout: 60
+        fast_cli: False
+#        expect_string: r'#'
+  data:
+    hostname: "c8k-1"
+
+c8k-2:
+  hostname: 172.26.228.238
+  port: 13965
+  groups:
+    - 8000_routers
+  connection_options:
+    napalm:
+      extras:
+        optional_args: {'allow_agent': True}
+    netmiko:
+      extras:
+        conn_timeout: 60
+        fast_cli: False
+#        expect_string: r'#'
+  data:
+    hostname: c8k-2
