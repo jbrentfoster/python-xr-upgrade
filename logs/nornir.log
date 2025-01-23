@@ -1,0 +1,1797 @@
+2025-01-20 21:05:29,448 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-20 21:05:34,806 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-20 21:05:34,807 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3
+2025-01-20 21:05:34,807 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3
+2025-01-20 21:05:34,807 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network', 'image_id': 0, 'install_id': 0} on 2 hosts
+2025-01-20 21:05:34,808 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:05:34,808 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:05:34,809 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-20-2105-29
+2025-01-20 21:05:34,809 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:05:34,809 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-20-2105-29
+2025-01-20 21:05:34,810 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:05:38,551 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-20-2105-29/c8k-1.txt
+2025-01-20 21:05:38,552 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:05:38,749 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-2 Config: backup_configs/test_network\2025-01-20-2105-29/c8k-2.txt
+2025-01-20 21:05:38,750 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:05:45,366 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.71/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:05:40.138 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-20 21:05:45,681 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.71/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:05:40.798 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-20 21:05:56,387 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.71/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:05:40.798 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.71/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!
+
+
+Error: Copy failed with error 'Connection timed out'
+2025-01-20 21:05:58,174 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.71/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:05:40.138 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.71/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!!
+
+
+Error: Copy failed with error 'Connection timed out'
+2025-01-20 21:05:58,301 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-20 21:05:58,302 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-20-2105-29
+2025-01-20 21:06:41,746 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-20 21:06:47,148 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-20 21:06:47,149 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3
+2025-01-20 21:06:47,149 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3
+2025-01-20 21:06:47,149 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network', 'image_id': 0, 'install_id': 0} on 2 hosts
+2025-01-20 21:06:47,150 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:06:47,150 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:06:47,150 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-20-2106-41
+2025-01-20 21:06:47,151 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:06:47,150 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-20-2106-41
+2025-01-20 21:06:47,151 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:06:50,299 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-2 Config: backup_configs/test_network\2025-01-20-2106-41/c8k-2.txt
+2025-01-20 21:06:50,301 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:06:50,612 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-20-2106-41/c8k-1.txt
+2025-01-20 21:06:50,612 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:06:57,150 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:06:52.289 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-20 21:06:57,424 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:06:52.201 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-20 21:09:14,536 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:06:52.289 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1003003580 Bytes
+
+
+Copy operation success
+2025-01-20 21:09:14,909 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Tue Jan 21 02:06:52.201 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1003003580 Bytes
+
+
+Copy operation success
+2025-01-20 21:09:21,397 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Tue Jan 21 02:09:16.515 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-20 21:09:21,399 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:09:21,913 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Tue Jan 21 02:09:16.685 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-20 21:09:21,914 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:10:21,406 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:10:21,922 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:11:21,411 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:11:21,929 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:12:21,419 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:12:21,938 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:13:21,425 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:13:21,944 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:14:21,432 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:14:21,952 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:15:21,438 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:15:21,959 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:15:45,442 -  nornir.core -     INFO - run_install() - c8k-2: Upgrade completed without error.
+2025-01-20 21:15:45,444 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Tue Jan 21 02:09:16.515 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Veto check ..........
+Current activity: Package add or other package operation ........................
+Current activity: Apply by reload .
+
+Atomic change 1.1: Pre-reload steps completed without error, reloading
+
+2025-01-20 21:15:55,453 -  nornir.core -     INFO -  reconnect() - c8k-2: Waiting for the device to come back up...
+2025-01-20 21:15:57,964 -  nornir.core -     INFO - run_install() - c8k-1: Upgrade completed without error.
+2025-01-20 21:15:57,965 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Tue Jan 21 02:09:16.685 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Veto check ...........
+Current activity: Package add or other package operation ........................
+Current activity: Apply by reload
+
+Atomic change 1.1: Pre-reload steps completed without error, reloading
+
+2025-01-20 21:16:07,967 -  nornir.core -     INFO -  reconnect() - c8k-1: Waiting for the device to come back up...
+2025-01-20 21:18:05,647 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:18:18,160 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:18:38,963 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:18:51,517 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:19:12,308 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:19:24,910 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:19:45,709 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:19:58,259 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:20:19,064 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:20:31,598 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:20:52,400 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:21:04,940 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:21:25,289 -  nornir.core -     INFO -  reconnect() - c8k-2: Reconnected to the device.
+2025-01-20 21:21:37,762 -  nornir.core -     INFO -  reconnect() - c8k-1: Reconnected to the device.
+2025-01-20 21:21:42,840 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-20 21:21:42,841 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-20-2106-41
+2025-01-20 21:23:08,519 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-20 21:23:14,608 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-20 21:23:14,609 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3
+2025-01-20 21:23:14,611 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3
+2025-01-20 21:23:14,611 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network', 'image_id': 0, 'install_id': 0} on 2 hosts
+2025-01-20 21:23:21,199 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install commit synchronous
+
+Tue Jan 21 02:23:16.572 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+2025-01-20 21:23:21,199 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:23:21,272 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install commit synchronous
+
+Tue Jan 21 02:23:16.987 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+2025-01-20 21:23:21,272 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:23:45,204 -  nornir.core -     INFO - run_install() - c8k-1: Upgrade completed without error.
+2025-01-20 21:23:45,205 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install commit synchronous
+
+Tue Jan 21 02:23:16.572 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Commit transaction .
+
+Transaction 1: 'install commit' completed without error
+RP/0/RP0/CPU0:c8k-1#
+2025-01-20 21:23:45,274 -  nornir.core -     INFO - run_install() - c8k-2: Upgrade completed without error.
+2025-01-20 21:23:45,274 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install commit synchronous
+
+Tue Jan 21 02:23:16.987 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Commit transaction .
+
+Transaction 1: 'install commit' completed without error
+RP/0/RP0/CPU0:c8k-2#
+2025-01-20 21:23:50,194 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-20 21:23:50,195 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-20-2123-08
+2025-01-20 21:25:21,663 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-20 21:25:27,679 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-20 21:25:27,680 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3
+2025-01-20 21:25:27,680 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3
+2025-01-20 21:25:27,680 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network', 'image_id': 1, 'install_id': 1} on 2 hosts
+2025-01-20 21:25:27,681 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:25:27,682 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-20-2125-21
+2025-01-20 21:25:27,682 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:25:27,681 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:25:27,684 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-20-2125-21
+2025-01-20 21:25:27,685 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:25:30,918 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-20-2125-21/c8k-1.txt
+2025-01-20 21:25:30,919 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:25:30,982 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-2 Config: backup_configs/test_network\2025-01-20-2125-21/c8k-2.txt
+2025-01-20 21:25:30,982 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-20 21:25:37,660 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.250/images/8000-x64-7.11.1.iso harddisk:
+
+Tue Jan 21 02:25:33.188 UTC
+Destination filename [/harddisk:/8000-x64-7.11.1.iso]?
+2025-01-20 21:25:37,808 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.250/images/8000-x64-7.11.1.iso harddisk:
+
+Tue Jan 21 02:25:33.537 UTC
+Destination filename [/harddisk:/8000-x64-7.11.1.iso]?
+2025-01-20 21:29:36,498 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.250/images/8000-x64-7.11.1.iso harddisk:
+
+Tue Jan 21 02:25:33.188 UTC
+Destination filename [/harddisk:/8000-x64-7.11.1.iso]?
+Accessing http://192.168.122.250/images/8000-x64-7.11.1.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1763229696 Bytes
+
+
+Copy operation success
+2025-01-20 21:29:36,651 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.250/images/8000-x64-7.11.1.iso harddisk:
+
+Tue Jan 21 02:25:33.537 UTC
+Destination filename [/harddisk:/8000-x64-7.11.1.iso]?
+Accessing http://192.168.122.250/images/8000-x64-7.11.1.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1763229696 Bytes
+
+
+Copy operation success
+2025-01-20 21:29:43,327 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install replace /harddisk:/8000-x64-7.11.1.iso noprompt reload commit synchronous
+
+Tue Jan 21 02:29:38.846 UTC
+Starting:
+  install replace /harddisk:/8000-x64-7.11.1.iso commit
+Transaction 2
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-20 21:29:43,328 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:29:43,519 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install replace /harddisk:/8000-x64-7.11.1.iso noprompt reload commit synchronous
+
+Tue Jan 21 02:29:39.281 UTC
+Starting:
+  install replace /harddisk:/8000-x64-7.11.1.iso commit
+Transaction 2
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-20 21:29:43,520 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:30:43,334 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:30:43,527 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:31:43,340 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:31:43,535 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:32:43,348 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:32:43,542 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:33:43,353 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:33:43,549 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:34:43,358 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:34:43,557 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:35:43,364 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:35:43,563 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:36:43,370 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:36:43,569 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:37:43,379 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:37:43,578 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:38:43,386 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:38:43,587 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:39:43,393 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:39:43,596 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:40:43,399 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:40:43,600 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:41:43,404 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:41:43,606 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:42:43,408 -  nornir.core -     INFO - run_install() - .
+2025-01-20 21:42:43,611 -  nornir.core -     INFO - run_install() - 
+2025-01-20 21:43:07,613 -  nornir.core -     INFO - run_install() - c8k-2: Upgrade completed without error.
+2025-01-20 21:43:07,613 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install replace /harddisk:/8000-x64-7.11.1.iso noprompt reload commit synchronous
+
+Tue Jan 21 02:29:39.281 UTC
+Starting:
+  install replace /harddisk:/8000-x64-7.11.1.iso commit
+Transaction 2
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Veto check ............................
+Current activity: Package add or other package operation ................................................
+Current activity: Apply by reload
+
+Transaction 2: Pre-reload steps completed without error, reloading
+
+2025-01-20 21:43:13,411 -  nornir.core -     INFO - run_install() - c8k-1: Upgrade completed without error.
+2025-01-20 21:43:13,412 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install replace /harddisk:/8000-x64-7.11.1.iso noprompt reload commit synchronous
+
+Tue Jan 21 02:29:38.846 UTC
+Starting:
+  install replace /harddisk:/8000-x64-7.11.1.iso commit
+Transaction 2
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Veto check ............................
+Current activity: Package add or other package operation ................................................
+Current activity: Apply by reload
+
+Transaction 2: Pre-reload steps completed without error, reloading
+ .
+2025-01-20 21:43:17,621 -  nornir.core -     INFO -  reconnect() - c8k-2: Waiting for the device to come back up...
+2025-01-20 21:43:23,420 -  nornir.core -     INFO -  reconnect() - c8k-1: Waiting for the device to come back up...
+2025-01-20 21:45:27,863 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:45:33,620 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:46:07,867 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:46:13,627 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:46:47,885 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:46:53,630 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:47:27,896 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:47:33,638 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:48:07,907 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:48:13,645 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:48:47,924 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:48:53,655 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:49:27,932 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:49:33,659 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:50:07,937 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:50:13,673 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:50:47,941 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:50:53,688 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-20 21:51:23,285 -  nornir.core -     INFO -  reconnect() - c8k-2: Reconnected to the device.
+2025-01-20 21:51:25,974 -  nornir.core -     INFO -  reconnect() - c8k-1: Reconnected to the device.
+2025-01-20 21:51:29,923 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install commit synchronous
+
+Tue Jan 21 02:51:25.530 UTC
+Failed to start commit: No install operation is in progress to commit. Request a packaging operation to start a transaction.
+2025-01-20 21:51:32,844 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install commit synchronous
+
+Tue Jan 21 02:51:28.830 UTC
+Failed to start commit: No install operation is in progress to commit. Request a packaging operation to start a transaction.
+2025-01-20 21:51:38,247 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-20 21:51:38,247 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-20-2125-21
+2025-01-22 11:25:48,485 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 11:25:53,990 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 11:25:53,991 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3
+2025-01-22 11:25:53,993 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3
+2025-01-22 11:36:51,372 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 11:38:04,144 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 11:39:18,498 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 11:50:05,095 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 11:55:17,175 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 11:55:17,533 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 2369, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\transport\ssh.py", line 326, in connect
+    self._transport.start_client()
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 773, in start_client
+    raise e
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 2185, in run
+    self._check_banner()
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 2373, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\napalm\iosxr_netconf\iosxr_netconf.py", line 83, in open
+    self.device = manager.connect(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\manager.py", line 187, in connect
+    return connect_ssh(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\manager.py", line 139, in connect_ssh
+    session.connect(*args, **kwds)
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\transport\ssh.py", line 328, in connect
+    raise SSHError('Negotiation failed: %s' % e)
+ncclient.transport.errors.SSHError: Negotiation failed: Error reading SSH protocol banner
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\napalm\iosxr_netconf\iosxr_netconf.py", line 97, in open
+    raise ConnectionException(conn_err.args[0])
+napalm.base.exceptions.ConnectionException: Negotiation failed: Error reading SSH protocol banner
+
+2025-01-22 11:55:17,534 - nornir.core.task -    ERROR -      start() - Host 'asr9k-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 2369, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\packet.py", line 395, in readline
+    buf += self._read_timeout(timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\packet.py", line 665, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\transport\ssh.py", line 326, in connect
+    self._transport.start_client()
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 773, in start_client
+    raise e
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 2185, in run
+    self._check_banner()
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\paramiko\transport.py", line 2373, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\napalm\iosxr_netconf\iosxr_netconf.py", line 83, in open
+    self.device = manager.connect(
+                  ^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\manager.py", line 187, in connect
+    return connect_ssh(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\manager.py", line 139, in connect_ssh
+    session.connect(*args, **kwds)
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\ncclient\transport\ssh.py", line 328, in connect
+    raise SSHError('Negotiation failed: %s' % e)
+ncclient.transport.errors.SSHError: Negotiation failed: Error reading SSH protocol banner
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\inventory.py", line 476, in get_connection
+    self.open_connection(
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\inventory.py", line 528, in open_connection
+    conn_obj.open(
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\napalm\iosxr_netconf\iosxr_netconf.py", line 97, in open
+    raise ConnectionException(conn_err.args[0])
+napalm.base.exceptions.ConnectionException: Negotiation failed: Error reading SSH protocol banner
+
+2025-01-22 11:55:17,536 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 135, in get_os_ver
+    facts = task.run(napalm_get, getters = ["facts"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-01-22 11:55:17,536 - nornir.core.task -    ERROR -      start() - Host 'asr9k-1': task 'get_facts' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 135, in get_os_ver
+    facts = task.run(napalm_get, getters = ["facts"])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 173, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: napalm_get (failed)
+
+
+2025-01-22 11:57:55,548 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 11:59:51,060 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 12:00:08,595 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 12:00:08,595 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 12:00:08,596 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 12:00:08,596 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 12:00:08,596 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 12:17:27,670 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 12:17:33,038 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 12:17:33,038 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 12:17:33,039 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 12:17:33,040 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 12:17:33,041 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 12:17:33,043 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 12:17:33,046 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:17:33,047 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1217-27
+2025-01-22 12:17:33,048 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:17:33,050 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:17:33,051 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1217-27
+2025-01-22 12:17:33,053 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:17:36,784 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-22-1217-27/c8k-1.txt
+2025-01-22 12:17:36,785 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:17:36,861 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-2 Config: backup_configs/test_network\2025-01-22-1217-27/c8k-2.txt
+2025-01-22 12:17:36,861 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:17:41,629 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:17:39.728 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-22 12:17:43,739 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:17:39.952 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-22 12:17:52,339 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:17:39.728 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!
+
+
+Error: Copy failed with error 'Connection timed out'
+2025-01-22 12:17:56,552 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:17:39.952 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.250/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!!
+
+
+Error: Copy failed with error 'Connection timed out'
+2025-01-22 12:17:56,681 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 12:17:56,682 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1217-27
+2025-01-22 12:20:48,941 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 12:20:54,347 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 12:20:54,349 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 12:20:54,351 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 12:20:54,352 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 12:20:54,354 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 12:20:54,355 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 12:20:54,357 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:20:54,358 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:20:54,359 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1220-48
+2025-01-22 12:20:54,360 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1220-48
+2025-01-22 12:20:54,361 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:20:54,362 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:20:57,779 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-2 Config: backup_configs/test_network\2025-01-22-1220-48/c8k-2.txt
+2025-01-22 12:20:57,780 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:20:57,797 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-22-1220-48/c8k-1.txt
+2025-01-22 12:20:57,799 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 12:21:02,594 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:21:00.702 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-22 12:21:04,713 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:21:00.941 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-22 12:23:22,184 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:21:00.702 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1003003580 Bytes
+
+
+Copy operation success
+2025-01-22 12:23:24,407 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 17:21:00.941 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+Accessing http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1003003580 Bytes
+
+
+Copy operation success
+2025-01-22 12:23:29,136 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Wed Jan 22 17:23:25.259 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-22 12:23:29,138 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:23:31,285 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Wed Jan 22 17:23:27.502 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-22 12:23:31,286 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:24:29,147 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:24:31,293 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:25:29,154 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:25:31,301 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:26:29,161 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:26:31,308 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:27:29,167 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:27:31,316 -  nornir.core -     INFO - run_install() - .
+2025-01-22 12:28:29,173 -  nornir.core -     INFO - run_install() - .
+2025-01-22 12:28:31,323 -  nornir.core -     INFO - run_install() - .
+2025-01-22 12:29:29,180 -  nornir.core -     INFO - run_install() - .
+2025-01-22 12:29:31,330 -  nornir.core -     INFO - run_install() - .
+2025-01-22 12:30:23,186 -  nornir.core -     INFO - run_install() - c8k-1: Upgrade completed without error.
+2025-01-22 12:30:23,187 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Wed Jan 22 17:23:25.259 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Veto check ...........
+Current activity: Package add or other package operation ..........................
+Current activity: Apply by reload
+
+Atomic change 1.1: Pre-reload steps completed without error, reloading
+
+2025-01-22 12:30:31,337 -  nornir.core -     INFO - run_install() - .
+2025-01-22 12:30:33,193 -  nornir.core -     INFO -  reconnect() - c8k-1: Waiting for the device to come back up...
+2025-01-22 12:30:37,340 -  nornir.core -     INFO - run_install() - c8k-2: Upgrade completed without error.
+2025-01-22 12:30:37,341 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz noprompt synchronous
+
+Wed Jan 22 17:23:27.502 UTC
+Starting:
+  install source /harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz
+Atomic change 1.1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing ..
+Current activity: Veto check ............
+Current activity: Package add or other package operation ..........................
+Current activity: Apply by reload
+
+Atomic change 1.1: Pre-reload steps completed without error, reloading
+
+2025-01-22 12:30:47,350 -  nornir.core -     INFO -  reconnect() - c8k-2: Waiting for the device to come back up...
+2025-01-22 12:32:43,401 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:32:57,611 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:33:16,710 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:33:30,913 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:33:50,050 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:34:04,258 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:34:23,393 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:34:37,606 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:34:56,738 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:35:10,948 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:35:30,077 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:35:44,288 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:36:03,425 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:36:17,631 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:36:36,767 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:36:50,974 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:37:10,112 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:37:24,320 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:37:43,458 -  nornir.core -     INFO -  reconnect() - c8k-1: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:37:57,657 -  nornir.core -     INFO -  reconnect() - c8k-2: Device is not yet available. Retrying in 30 seconds...
+2025-01-22 12:38:16,462 -  nornir.core -     INFO -  reconnect() - c8k-1: Reconnected to the device.
+2025-01-22 12:38:23,197 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install commit synchronous
+
+Wed Jan 22 17:38:18.639 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+2025-01-22 12:38:23,199 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:38:30,406 -  nornir.core -     INFO -  reconnect() - c8k-2: Reconnected to the device.
+2025-01-22 12:38:37,127 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install commit synchronous
+
+Wed Jan 22 17:38:33.883 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+2025-01-22 12:38:37,129 -  nornir.core -     INFO - run_install() - 
+2025-01-22 12:38:47,202 -  nornir.core -     INFO - run_install() - c8k-1: Upgrade completed without error.
+2025-01-22 12:38:47,205 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#install commit synchronous
+
+Wed Jan 22 17:38:18.639 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Commit transaction .
+
+Transaction 1: 'install commit' completed without error
+RP/0/RP0/CPU0:c8k-1#
+2025-01-22 12:39:01,132 -  nornir.core -     INFO - run_install() - c8k-2: Upgrade completed without error.
+2025-01-22 12:39:01,133 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#install commit synchronous
+
+Wed Jan 22 17:38:33.883 UTC
+Starting:
+  install commit
+Transaction 1
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing
+Current activity: Commit transaction .
+
+Transaction 1: 'install commit' completed without error
+RP/0/RP0/CPU0:c8k-2#
+2025-01-22 12:39:08,200 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 12:39:08,201 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1220-48
+2025-01-22 13:16:04,134 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:16:09,790 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:16:09,791 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:16:09,791 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:16:09,792 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:16:09,793 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:16:09,793 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:16:09,794 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:16:09,795 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1316-04
+2025-01-22 13:16:09,795 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:16:09,795 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:16:09,797 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1316-04
+2025-01-22 13:16:09,797 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:16:14,808 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1316-04/asr9k-1.txt
+2025-01-22 13:16:14,809 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:16:14,946 - nornir.core.task -    ERROR -      start() - Host 'asr9k-1': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 147, in upgrade_9k
+    image_file_id=task.host['image_id']
+                  ~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'image_id'
+
+2025-01-22 13:16:14,955 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1316-04/asr9k-2.txt
+2025-01-22 13:16:14,955 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:16:15,086 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 147, in upgrade_9k
+    image_file_id=task.host['image_id']
+                  ~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\inventory.py", line 337, in __getitem__
+    return self.data[item]
+           ~~~~~~~~~^^^^^^
+KeyError: 'image_id'
+
+2025-01-22 13:16:15,088 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 13:16:15,089 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1316-04
+2025-01-22 13:17:46,741 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:17:52,199 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:17:52,199 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:17:52,199 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:17:52,199 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:17:52,200 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:17:52,200 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:17:52,201 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:17:52,201 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1317-46
+2025-01-22 13:17:52,202 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:17:52,201 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:17:52,203 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1317-46
+2025-01-22 13:17:52,204 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:17:57,165 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1317-46/asr9k-1.txt
+2025-01-22 13:17:57,166 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:17:57,322 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1317-46/asr9k-2.txt
+2025-01-22 13:17:57,324 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:18:05,135 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:18:01.022 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+2025-01-22 13:18:05,158 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:18:01.179 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+2025-01-22 13:21:32,345 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:18:01.022 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+Accessing http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1819856896 Bytes
+
+
+Copy operation success
+2025-01-22 13:21:34,569 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:18:01.179 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+Accessing http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1819856896 Bytes
+
+
+Copy operation success
+2025-01-22 13:21:42,656 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 13:21:42,657 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1317-46
+2025-01-22 13:36:47,098 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:36:52,507 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:36:52,508 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:36:52,509 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:36:52,511 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:36:52,512 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:36:52,512 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:36:52,514 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:36:52,514 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:36:52,515 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1336-47
+2025-01-22 13:36:52,516 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1336-47
+2025-01-22 13:36:52,516 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:36:52,517 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:36:57,601 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1336-47/asr9k-1.txt
+2025-01-22 13:36:57,602 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:36:57,665 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1336-47/asr9k-2.txt
+2025-01-22 13:36:57,665 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:37:05,570 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:37:01.576 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+2025-01-22 13:37:05,673 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:37:01.541 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+2025-01-22 13:40:32,690 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:37:01.576 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+Accessing http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1819856896 Bytes
+
+
+Copy operation success
+2025-01-22 13:40:35,071 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#copy http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso harddisk:
+
+Wed Jan 22 18:37:01.541 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.11.1.iso]?
+Accessing http://192.168.122.251/images/asr9k-full-x64-7.11.1.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1819856896 Bytes
+
+
+Copy operation success
+2025-01-22 13:45:35,688 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:45:41,018 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:45:41,019 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:45:41,019 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:45:41,020 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:45:41,020 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:45:41,021 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:45:41,022 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:45:41,023 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:45:41,024 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1345-35
+2025-01-22 13:45:41,024 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1345-35
+2025-01-22 13:45:41,025 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:45:41,025 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:45:46,031 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1345-35/asr9k-2.txt
+2025-01-22 13:45:46,033 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:45:46,199 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1345-35/asr9k-1.txt
+2025-01-22 13:45:46,199 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:45:49,193 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 159, in upgrade_9k
+    if not r[0].result.failed:
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'failed'
+
+2025-01-22 13:45:49,331 - nornir.core.task -    ERROR -      start() - Host 'asr9k-1': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 159, in upgrade_9k
+    if not r[0].result.failed:
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'failed'
+
+2025-01-22 13:45:49,335 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 13:45:49,336 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1345-35
+2025-01-22 13:46:41,248 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:46:46,636 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:46:46,636 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:46:46,637 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:46:46,637 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:46:46,637 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:46:46,638 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:46:46,639 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:46:46,640 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1346-41
+2025-01-22 13:46:46,639 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:46:46,640 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:46:46,640 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1346-41
+2025-01-22 13:46:46,642 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:46:51,691 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1346-41/asr9k-1.txt
+2025-01-22 13:46:51,691 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:46:51,768 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1346-41/asr9k-2.txt
+2025-01-22 13:46:51,769 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:46:54,809 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 159, in upgrade_9k
+    if not r[0].result['failed']:
+           ~~~~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-01-22 13:46:54,842 - nornir.core.task -    ERROR -      start() - Host 'asr9k-1': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 159, in upgrade_9k
+    if not r[0].result['failed']:
+           ~~~~~~~~~~~^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+2025-01-22 13:46:54,843 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 13:46:54,843 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1346-41
+2025-01-22 13:47:42,784 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:47:48,193 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:47:48,193 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:47:48,194 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:47:48,194 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:47:48,195 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:47:48,197 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:47:48,199 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:47:48,201 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:47:48,201 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1347-42
+2025-01-22 13:47:48,202 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1347-42
+2025-01-22 13:47:48,204 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:47:48,205 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:47:53,529 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1347-42/asr9k-1.txt
+2025-01-22 13:47:53,530 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:47:54,163 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1347-42/asr9k-2.txt
+2025-01-22 13:47:54,164 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:49:53,690 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:49:59,123 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:49:59,124 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:49:59,124 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:49:59,124 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:49:59,125 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:49:59,125 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:49:59,126 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:49:59,127 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:49:59,127 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1349-53
+2025-01-22 13:49:59,128 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1349-53
+2025-01-22 13:49:59,128 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:49:59,128 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:50:04,191 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1349-53/asr9k-1.txt
+2025-01-22 13:50:04,192 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:50:04,381 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1349-53/asr9k-2.txt
+2025-01-22 13:50:04,383 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:50:26,706 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 13:50:26,707 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1349-53
+2025-01-22 13:50:54,075 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 13:50:59,495 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 13:50:59,496 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:50:59,497 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 13:50:59,497 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:50:59,499 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 13:50:59,500 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 13:50:59,501 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:50:59,502 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:50:59,503 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1350-54
+2025-01-22 13:50:59,504 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:50:59,503 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1350-54
+2025-01-22 13:50:59,506 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:51:04,469 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1350-54/asr9k-1.txt
+2025-01-22 13:51:04,470 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:51:04,637 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1350-54/asr9k-2.txt
+2025-01-22 13:51:04,638 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 13:51:15,524 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 13:51:15,525 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1350-54
+2025-01-22 15:20:52,917 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 15:20:58,492 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 15:20:58,495 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:20:58,496 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:20:58,497 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:20:58,498 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:20:58,499 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 15:20:58,501 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:20:58,502 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:20:58,504 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1520-52
+2025-01-22 15:20:58,503 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1520-52
+2025-01-22 15:20:58,505 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:20:58,506 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:21:03,487 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1520-52/asr9k-2.txt
+2025-01-22 15:21:03,488 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:21:03,663 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/test_network\2025-01-22-1520-52/asr9k-1.txt
+2025-01-22 15:21:03,664 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:21:11,362 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso harddisk:
+
+Wed Jan 22 20:21:07.465 UTC
+Destination filename [/harddisk:/asr9k-mini-x64-7.9.2.iso]?
+2025-01-22 15:21:11,604 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#copy http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso harddisk:
+
+Wed Jan 22 20:21:07.549 UTC
+Destination filename [/harddisk:/asr9k-mini-x64-7.9.2.iso]?
+2025-01-22 15:24:03,077 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#
+
+RP/0/RSP0/CPU0:asr9k-1#copy http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso harddisk:
+
+Wed Jan 22 20:21:07.549 UTC
+Destination filename [/harddisk:/asr9k-mini-x64-7.9.2.iso]?
+Accessing http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1694345216 Bytes
+
+
+Copy operation success
+2025-01-22 15:24:04,944 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso harddisk:
+
+Wed Jan 22 20:21:07.465 UTC
+Destination filename [/harddisk:/asr9k-mini-x64-7.9.2.iso]?
+Accessing http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1694345216 Bytes
+
+
+Copy operation success
+2025-01-22 15:24:05,068 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 15:24:05,069 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1520-52
+2025-01-22 15:24:15,157 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 15:24:20,739 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 15:24:20,741 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:24:20,742 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:24:20,744 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:24:20,745 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:25:29,841 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 15:25:35,600 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 15:25:35,602 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:25:35,603 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:25:35,603 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:25:35,604 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:29:09,508 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 15:29:15,016 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 15:29:15,018 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:29:15,019 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:29:15,021 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:29:15,023 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:29:15,024 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 15:29:15,026 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:29:15,027 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:29:15,028 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1529-09
+2025-01-22 15:29:15,029 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1529-09
+2025-01-22 15:29:15,030 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:29:15,032 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:29:18,312 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-22-1529-09/c8k-1.txt
+2025-01-22 15:29:18,315 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:29:18,374 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: c8k-2 Config: backup_configs/test_network\2025-01-22-1529-09/c8k-2.txt
+2025-01-22 15:29:18,375 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:29:23,261 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#
+
+RP/0/RP0/CPU0:c8k-1#copy http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 20:29:20.757 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-22 15:29:25,104 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#
+
+RP/0/RP0/CPU0:c8k-2#copy http://192.168.122.251/images/8000-x86_64-7.3.3-CSCwd71524.tgz harddisk:
+
+Wed Jan 22 20:29:22.234 UTC
+Destination filename [/harddisk:/8000-x86_64-7.3.3-CSCwd71524.tgz]?
+2025-01-22 15:29:49,683 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 4 hosts
+2025-01-22 15:29:55,152 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 15:29:55,153 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:29:55,154 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:29:55,156 -  nornir.core -     INFO -       main() - Host: asr9k-1 - Hostname: asr9k-1- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:29:55,157 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:29:55,158 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 2 hosts
+2025-01-22 15:30:03,220 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 15:30:03,222 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1529-49
+2025-01-22 15:51:35,160 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 15:51:40,688 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 15:51:40,689 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:51:40,690 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 15:51:40,690 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 15:51:40,691 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 15:51:40,693 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:51:40,694 -  nornir.core -     INFO - pull_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-22-1551-35
+2025-01-22 15:51:40,695 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:51:45,605 -  nornir.core -     INFO - pull_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-22-1551-35/asr9k-2.txt
+2025-01-22 15:51:45,607 -  nornir.core -     INFO - pull_configs_ssh() - ============================================================
+2025-01-22 15:51:53,494 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso harddisk:
+
+Wed Jan 22 20:51:49.608 UTC
+Destination filename [/harddisk:/asr9k-mini-x64-7.9.2.iso]?
+2025-01-22 15:54:34,217 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso harddisk:
+
+Wed Jan 22 20:51:49.608 UTC
+Destination filename [/harddisk:/asr9k-mini-x64-7.9.2.iso]?
+Accessing http://192.168.122.251/images/asr9k-mini-x64-7.9.2.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1694345216 Bytes
+
+
+Copy operation success
+2025-01-22 15:54:43,124 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 20:54:41.356 UTC
+
+2025-01-22 15:54:43,125 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 15:54:43,125 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 20:54:41.356 UTC
+
+2025-01-22 15:54:53,128 -  nornir.core -     INFO -  reconnect() - asr9k-2: Waiting for the device to come back up...
+2025-01-22 15:56:56,487 -  nornir.core -     INFO -  reconnect() - asr9k-2: Reconnected to the device.
+2025-01-22 15:57:04,200 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install commit synchronous
+
+Wed Jan 22 20:57:00.316 UTC
+Jan 22 20:57:02 Install operation 2 started by cisco:
+  install commit synchronous 
+
+2025-01-22 15:57:04,201 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 15:57:04,203 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install commit synchronous
+
+Wed Jan 22 20:57:00.316 UTC
+Jan 22 20:57:02 Install operation 2 started by cisco:
+  install commit synchronous 
+
+2025-01-22 15:57:20,486 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 15:57:20,487 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1551-35
+2025-01-22 16:16:47,421 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 16:16:52,854 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 16:16:52,855 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:16:52,856 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:16:52,857 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 16:16:52,857 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 16:17:15,520 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 105, in upgrade
+    for install_command in task.host['install_commands'].items():
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'items'
+
+2025-01-22 16:17:15,521 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 16:17:15,521 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1616-37
+2025-01-22 16:17:48,556 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 16:17:54,025 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 16:17:54,025 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:17:54,026 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:17:54,026 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 16:17:54,026 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 16:18:26,631 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 16:18:32,108 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 16:18:32,109 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:18:32,109 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:18:32,110 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 16:18:32,111 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 16:18:50,461 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 16:18:55,948 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 16:18:55,949 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:18:55,950 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:18:55,950 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 16:18:55,951 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 16:19:40,203 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 21:19:38.469 UTC
+
+2025-01-22 16:19:40,204 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 16:19:40,204 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 21:19:38.469 UTC
+
+2025-01-22 16:20:36,783 - nornir.core.task -    ERROR -      start() - Host 'asr9k-2': task 'Running upgrade tasks' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\.venv\Lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\brfoster\PycharmProjects\python-xr-upgrade\main.py", line 116, in upgrade
+    if install_command('reload'):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object is not callable
+
+2025-01-22 16:20:36,785 -  nornir.core -     INFO -       main() - Script completed successfully
+2025-01-22 16:20:36,785 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-22-1618-50
+2025-01-22 16:21:07,490 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 16:21:12,846 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 16:21:12,847 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:21:12,847 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:21:12,847 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 16:21:12,847 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 16:21:27,941 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 21:21:26.189 UTC
+
+2025-01-22 16:21:27,941 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 16:21:27,942 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 21:21:26.189 UTC
+
+2025-01-22 16:23:24,677 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 21:23:22.916 UTC
+
+2025-01-22 16:23:24,677 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 16:23:24,678 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 21:23:22.916 UTC
+
+2025-01-22 16:24:14,680 -  nornir.core -     INFO -  reconnect() - asr9k-2: Waiting for the device to come back up...
+2025-01-22 16:57:04,238 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 16:57:09,731 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 16:57:09,732 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:57:09,733 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 16:57:09,735 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 16:57:09,736 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 16:57:15,396 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 21:57:13.670 UTC
+
+2025-01-22 16:57:15,399 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 16:57:15,400 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 21:57:13.670 UTC
+
+2025-01-22 17:01:02,191 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 22:01:00.471 UTC
+
+2025-01-22 17:01:02,194 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 17:01:02,194 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 22:01:00.471 UTC
+
+2025-01-22 17:13:14,600 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 17:13:20,096 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 17:13:20,097 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 17:13:20,097 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 17:13:20,098 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 17:13:20,099 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 17:13:25,839 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 22:13:24.130 UTC
+
+2025-01-22 17:13:25,840 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 17:13:25,840 -  nornir.core -     INFO - run_install() - 
+2025-01-22 17:13:50,857 -  nornir.core -     INFO - run_install() - 
+
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 22:13:49.136 UTC
+
+2025-01-22 17:13:50,859 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 17:13:50,860 -  nornir.core -     INFO - run_install() - 
+2025-01-22 17:15:38,295 -  nornir.core -     INFO -  reconnect() - asr9k-2: Waiting for the device to come back up...
+2025-01-22 17:17:39,795 -  nornir.core -     INFO -        run() - Running task 'get_facts' with args {'network_name': 'test_network'} on 3 hosts
+2025-01-22 17:17:45,584 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-22 17:17:45,585 -  nornir.core -     INFO -       main() - Host: c8k-1 - Hostname: c8k-1- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 17:17:45,585 -  nornir.core -     INFO -       main() - Host: c8k-2 - Hostname: c8k-2- Current OS version: 7.3.3- Device group: [Group: 8k_routers]
+2025-01-22 17:17:45,586 -  nornir.core -     INFO -       main() - Host: asr9k-2 - Hostname: asr9k-2- Current OS version: 7.1.3- Device group: [Group: 9k_routers]
+2025-01-22 17:17:45,587 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-22 17:17:51,279 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 22:17:49.552 UTC
+
+2025-01-22 17:17:51,281 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 17:17:51,282 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous
+
+Wed Jan 22 22:17:49.552 UTC
+
+2025-01-22 17:18:35,616 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 22:18:33.906 UTC
+
+2025-01-22 17:18:35,618 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-22 17:18:35,619 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-mini-x64-7.9.2 noprompt synchronous
+
+Wed Jan 22 22:18:33.906 UTC
+

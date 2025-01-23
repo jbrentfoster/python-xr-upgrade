@@ -20,11 +20,6 @@ pip install nornir
 pip install nornir-napalm
 pip install nornir-utils
 ```
-### cd to ansible-xr-upgrade directory
-```
-cd ansible-xr-upgrade
-```
-
 ### Install HTTP Server
 ```commandline
 sudo apt-get -y install apache2
@@ -43,6 +38,13 @@ Update the following files:
 * /inventory/<network-name>/hosts.yaml
 * /inventory/<network-name>/config.yaml
 * /inventory/<network-name>/groups.yaml
+
+## Enable Netconf on Routers
+Make sure netconf is enabled on the routers
+```commandline
+netconf-yang agent
+ssh server netconf vrf default
+```
 ## Run the script
 ```commandline
 TBA

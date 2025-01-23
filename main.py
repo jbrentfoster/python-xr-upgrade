@@ -1,5 +1,6 @@
 from nornir import InitNornir
 from nornir.core.task import Task, Result
+from nornir.core.filter import F
 from nornir_utils.plugins.functions import print_result
 from netmiko import Netmiko, ConnectHandler, file_transfer, SCPConn
 from datetime import datetime
@@ -8,7 +9,7 @@ import time
 import argparse
 import os
 import re
-from nornir_napalm.plugins.tasks import napalm_get
+from nornir_napalm.plugins.tasks import napalm_get, napalm_configure
 
 # globals
 current_time = str(datetime.now().strftime('%Y-%m-%d-%H%M-%S'))
@@ -18,7 +19,7 @@ gen_configs_root = "configs/"
 # get command line inputs
 parser = argparse.ArgumentParser()
 parser.add_argument("--network_name", help="Name of network to use.")
-# parser.add_argument("--image_file_name", help="Name of image file to use for upgrade.")
+parser.add_argument("--upgrade_groups", help="Integer value, e.g. 0")
 args = parser.parse_args()
 
 # initialize Nornir
@@ -26,15 +27,16 @@ nr = InitNornir(config_file=f"inventory/{args.network_name}/config.yaml")
 logger = logging.getLogger("nornir.core")
 
 def main():
+    # collect all device running OS version
     r = nr.run(
         name="get_facts",
-        task=get_network,
+        task=get_os_ver,
         network_name=args.network_name
     )
 
     hostnames_to_filter = []
     for host, result in r.items():
-        target_os_ver = nr.inventory.hosts[host]['os_ver']
+        target_os_ver = nr.inventory.hosts[host]['target_os_ver']
         # running_os_ver = result[0].result['facts']['os_version']
         running_os_ver = result[0].result
         if target_os_ver != running_os_ver:
@@ -42,29 +44,39 @@ def main():
 
     # Filter hosts based on the list of hostnames
     filtered_hosts = nr.filter(filter_func=lambda host: host.name in hostnames_to_filter)
+    filtered_hosts_8k = filtered_hosts.filter(F(groups__contains='8k_routers'))
+    filtered_hosts_9k = filtered_hosts.filter(F(groups__contains='9k_routers'))
+
     logger.info("Will upgrade the following routers:")
     for host, data in filtered_hosts.inventory.hosts.items():
         logger.info(
             f"Host: {host} "
             + f"- Hostname: {data.name}"
             + f"- Current OS version: {r[host][0].result}"
+            + f"- Device group: {data.groups}"
         )
-    result = filtered_hosts.run(
-        name="Running upgrade tasks",
-        task=upgrade_8000,
-        network_name=args.network_name,
-        image_id=2,
-        install_id=2
-    )
-    print_result(result)
 
-    #todo come up with different way of specifying upgrade, maybe CLI arguments?
-    
+    if "8k_routers" in args.upgrade_groups:
+        result = filtered_hosts_8k.run(
+            name="Running upgrade tasks",
+            task=upgrade,
+            network_name=args.network_name,
+        )
+        print_result(result)
+
+    if "9k_routers" in args.upgrade_groups:
+        result = filtered_hosts_9k.run(
+            name="Running upgrade tasks",
+            task=upgrade,
+            network_name=args.network_name,
+        )
+        print_result(result)
+
     logger.info("Script completed successfully")
     logger.info("Script stop time is " + current_time)
 
 
-def upgrade_8000(task: Task, network_name: str, image_id: int, install_id: int) -> Result:
+def upgrade(task: Task, network_name: str) -> Result:
     task.run(
         name="Backing up router configurations.",
         task=pull_configs_ssh,
@@ -73,7 +85,7 @@ def upgrade_8000(task: Task, network_name: str, image_id: int, install_id: int) 
     r = task.run(
         name="Copy image file to the router.",
         task=run_copy_file,
-        image_file_id=image_id,
+        image_file_id=task.host['image_id']
     )
     if not r[0].result:
         return Result(
@@ -81,38 +93,36 @@ def upgrade_8000(task: Task, network_name: str, image_id: int, install_id: int) 
             result=f"{task.host} image transfer failed.",
         )
     r = task.run(
-        name="Run install image.",
-        task=run_install,
-        install_id=install_id,
+        name="Enable fpd auto upgrade.",
+        task=napalm_configure,
+        configuration="fpd auto-upgrade enable",
     )
-    if not r[0].result:
+    if r[0].failed:
         return Result(
             host=task.host,
-            result=f"{task.host} install failed.",
+            result=f"{task.host} failed to enable fpd auto upgrade",
         )
-    r = task.run(
-        name="Try to reconnect to router after reload.",
-        task=reconnect,
-    )
-    if not r[0].result:
-        return Result(
-            host=task.host,
-            result=f"{task.host} failed to reconnect.",
+    for install_command in task.host['install_commands']:
+        r = task.run(
+            name="Run install image.",
+            task=run_install,
+            install_command=install_command['command'],
         )
-    # r = task.run(
-    #     name="Run install commit.",
-    #     task=run_install,
-    #     install_id=-1
-    # )
-    # if not r[0].result:
-    #     return Result(
-    #         host=task.host,
-    #         result=f"{task.host} install commit failed.",
-    #     )
-    # task.run(
-    #     name="Pausing upgrade.",
-    #     task=pause_upgrade
-    # )
+        if not r[0].result:
+            return Result(
+                host=task.host,
+                result=f"{task.host} install failed.",
+            )
+        if install_command['reload']:
+            r = task.run(
+                name="Try to reconnect to router after reload.",
+                task=reconnect,
+            )
+            if not r[0].result:
+                return Result(
+                    host=task.host,
+                    result=f"{task.host} failed to reconnect.",
+                )
     r = task.run(
         name="Check router running software version.",
         task=run_check_sw_ver,
@@ -125,7 +135,68 @@ def upgrade_8000(task: Task, network_name: str, image_id: int, install_id: int) 
     )
 
 
-def get_network(task: Task, network_name: str) -> Result:
+# def upgrade_9k(task: Task, network_name: str) -> Result:
+#     task.run(
+#         name="Backing up router configurations.",
+#         task=pull_configs_ssh,
+#         network_name=network_name,
+#     )
+#     r = task.run(
+#         name="Copy image file to the router.",
+#         task=run_copy_file,
+#         image_file_id=task.host['image_id']
+#     )
+#     if not r[0].result:
+#         return Result(
+#             host=task.host,
+#             result=f"{task.host} image transfer failed.",
+#         )
+#     r = task.run(
+#         name="Enable fpd auto upgrade.",
+#         task=napalm_configure,
+#         configuration="fpd auto-upgrade enable",
+#     )
+#     if r[0].failed:
+#         return Result(
+#             host=task.host,
+#             result=f"{task.host} failed to enable fpd auto upgrade",
+#         )
+#     r = task.run(
+#         name="Run install image.",
+#         task=run_install,
+#         install_id=task.host['install_id'],
+#     )
+#     if not r[0].result:
+#         return Result(
+#             host=task.host,
+#             result=f"{task.host} install failed.",
+#         )
+#     r = task.run(
+#         name="Try to reconnect to router after reload.",
+#         task=reconnect,
+#     )
+#     if not r[0].result:
+#         return Result(
+#             host=task.host,
+#             result=f"{task.host} failed to reconnect.",
+#         )
+#     r = task.run(
+#         name="Run install commit.",
+#         task=run_install,
+#         install_id=-1
+#     )
+#     r = task.run(
+#         name="Check router running software version.",
+#         task=run_check_sw_ver,
+#         # network_name=network_name
+#     )
+#     sw_ver = r[0].result
+#     return Result(
+#         host=task.host,
+#         result=f"{task.host} is now running {sw_ver}.",
+#     )
+
+def get_os_ver(task: Task, network_name: str) -> Result:
     facts = task.run(napalm_get, getters = ["facts"])
     os_ver = facts.result['facts']['os_version']
     return Result(
@@ -180,7 +251,7 @@ def run_check_sw_ver(task: Task) -> Result:
         result=result
     )
 
-def run_install(task: Task, install_id: int) -> Result:
+def run_install(task: Task, install_command: str) -> Result:
     my_connection = ConnectHandler(
         ip=task.host.hostname,
         username=task.host.username,
@@ -189,10 +260,6 @@ def run_install(task: Task, install_id: int) -> Result:
         port=task.host.port,
     )
     my_connection.find_prompt()
-    if install_id != -1:
-        install_command = task.host['install_commands'][install_id]
-    else:
-        install_command = task.host['install_commit_command']
     device_response = my_connection.send_command_timing(install_command, read_timeout=1800)
     logger.info(device_response)
     upgrade_complete = False
@@ -205,9 +272,8 @@ def run_install(task: Task, install_id: int) -> Result:
             # Read the device_response from the connection
             device_response = my_connection.read_channel()
             total_response += device_response
-
             # Check if the completion message is in the device_response
-            if "completed without error" in total_response:
+            if "completed without error" or "activate action completed successfully" in total_response:
                 upgrade_complete = True
                 logger.info(f"{task.host}: Upgrade completed without error.")
             elif "fail" in total_response.lower():
@@ -223,6 +289,11 @@ def run_install(task: Task, install_id: int) -> Result:
                 time.sleep(6)  # Wait for 6 seconds before checking again
                 count += 1
         logger.info(total_response)
+    else:
+        logger.info(f"{task.host}: Install failed, check router 'show install request'.")
+        additional_response = my_connection.read_channel()
+        total_response = device_response + additional_response
+        logger.info(total_response)
     my_connection.disconnect()
     result = upgrade_complete
     return Result(
@@ -232,13 +303,13 @@ def run_install(task: Task, install_id: int) -> Result:
 
 
 def reconnect(task: Task) -> Result:
+    result = False
     try:
         # Wait for the device to reload
         logger.info(f"{task.host}: Waiting for the device to come back up...")
         time.sleep(120)  # Wait for 2 minutes (adjust as necessary)
 
         # Try to reconnect
-        result = False
         count = 0
         while True and count <= 10:
             try:
@@ -258,7 +329,6 @@ def reconnect(task: Task) -> Result:
                 logger.info(f"{task.host}: Device is not yet available. Retrying in 30 seconds...", exc_info=False)
                 count += 1
                 time.sleep(30)
-
     except Exception as e:
         logger.info(f"{task.host}: An error occurred: {e}")
     return Result(
@@ -273,6 +343,7 @@ def pause_upgrade(task: Task) -> Result:
         host=task.host,
         result=True
     )
+
 
 def pull_configs_ssh(task: Task, network_name: str) -> Result:
     topo_path = os.path.join(config_root, network_name, current_time)
