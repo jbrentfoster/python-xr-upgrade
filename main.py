@@ -9,52 +9,61 @@ import time
 import argparse
 import os
 import re
-from nornir_napalm.plugins.tasks import napalm_get, napalm_configure
 
 # globals
 current_time = str(datetime.now().strftime('%Y-%m-%d-%H%M-%S'))
 config_root = "backup_configs/"
+pre_check_root = "pre_checks/"
 gen_configs_root = "configs/"
 
 # get command line inputs
 parser = argparse.ArgumentParser()
 parser.add_argument("--network_name", help="Name of network to use.")
-parser.add_argument("--upgrade_groups", help="Integer value, e.g. 0")
+parser.add_argument("--upgrade_groups", help="names of router groups, e.g. 8k_routers")
 args = parser.parse_args()
 
 # initialize Nornir
 nr = InitNornir(config_file=f"inventory/{args.network_name}/config.yaml")
 logger = logging.getLogger("nornir.core")
 
+
 def main():
     # collect all device running OS version
     r = nr.run(
-        name="get_facts",
-        task=get_os_ver,
-        network_name=args.network_name
+        name="Check software versions on hosts.",
+        task=run_check_sw_ver
     )
-
+    logger.info("Router inventory:")
+    for host, attributes in nr.inventory.hosts.items():
+        logger.info(
+            f"\nHost: {host}\n"
+            + f"- Hostname: {attributes.name}\n"
+            + f"- Current OS version: {r[host][0].result}\n"
+            + f"- Target OS version: {nr.inventory.hosts[host]['target_os_ver']}\n"
+            + f"- Device group: {attributes.groups}\n"
+        )
     hostnames_to_filter = []
     for host, result in r.items():
         target_os_ver = nr.inventory.hosts[host]['target_os_ver']
         # running_os_ver = result[0].result['facts']['os_version']
         running_os_ver = result[0].result
-        if target_os_ver != running_os_ver:
+        if target_os_ver not in running_os_ver and running_os_ver != "unknown":
             hostnames_to_filter.append(host)
 
     # Filter hosts based on the list of hostnames
     filtered_hosts = nr.filter(filter_func=lambda host: host.name in hostnames_to_filter)
+    logger.info("Will upgrade the following routers:")
+    for host, attributes in filtered_hosts.inventory.hosts.items():
+        logger.info(
+            f"\nHost: {host}\n"
+            + f"- Hostname: {attributes.name}\n"
+            + f"- Current OS version: {r[host][0].result}\n"
+            + f"- Target OS version: {nr.inventory.hosts[host]['target_os_ver']}\n"
+            + f"- Device group: {attributes.groups}\n"
+        )
+
     filtered_hosts_8k = filtered_hosts.filter(F(groups__contains='8k_routers'))
     filtered_hosts_9k = filtered_hosts.filter(F(groups__contains='9k_routers'))
-
-    logger.info("Will upgrade the following routers:")
-    for host, data in filtered_hosts.inventory.hosts.items():
-        logger.info(
-            f"Host: {host} "
-            + f"- Hostname: {data.name}"
-            + f"- Current OS version: {r[host][0].result}"
-            + f"- Device group: {data.groups}"
-        )
 
     if "8k_routers" in args.upgrade_groups:
         result = filtered_hosts_8k.run(
@@ -72,20 +81,25 @@ def main():
         )
         print_result(result)
 
-    logger.info("Script completed successfully")
+    logger.info("Script completed.")
     logger.info("Script stop time is " + current_time)
 
 
 def upgrade(task: Task, network_name: str) -> Result:
     task.run(
         name="Backing up router configurations.",
-        task=pull_configs_ssh,
+        task=backup_configs_ssh,
         network_name=network_name,
+    )
+    task.run(
+        name="Running pre-checks.",
+        task=run_pre_checks  ,
+        network_name=args.network_name,
+        commands=task.host['pre_check_commands'],
     )
     r = task.run(
         name="Copy image file to the router.",
         task=run_copy_file,
-        image_file_id=task.host['image_id']
     )
     if not r[0].result:
         return Result(
@@ -94,8 +108,8 @@ def upgrade(task: Task, network_name: str) -> Result:
         )
     r = task.run(
         name="Enable fpd auto upgrade.",
-        task=napalm_configure,
-        configuration="fpd auto-upgrade enable",
+        task=configure_CLI,
+        commands=["fpd auto-upgrade enable"],
     )
     if r[0].failed:
         return Result(
@@ -135,76 +149,78 @@ def upgrade(task: Task, network_name: str) -> Result:
     )
 
 
-# def upgrade_9k(task: Task, network_name: str) -> Result:
-#     task.run(
-#         name="Backing up router configurations.",
-#         task=pull_configs_ssh,
-#         network_name=network_name,
-#     )
-#     r = task.run(
-#         name="Copy image file to the router.",
-#         task=run_copy_file,
-#         image_file_id=task.host['image_id']
-#     )
-#     if not r[0].result:
-#         return Result(
-#             host=task.host,
-#             result=f"{task.host} image transfer failed.",
-#         )
-#     r = task.run(
-#         name="Enable fpd auto upgrade.",
-#         task=napalm_configure,
-#         configuration="fpd auto-upgrade enable",
-#     )
-#     if r[0].failed:
-#         return Result(
-#             host=task.host,
-#             result=f"{task.host} failed to enable fpd auto upgrade",
-#         )
-#     r = task.run(
-#         name="Run install image.",
-#         task=run_install,
-#         install_id=task.host['install_id'],
-#     )
-#     if not r[0].result:
-#         return Result(
-#             host=task.host,
-#             result=f"{task.host} install failed.",
-#         )
-#     r = task.run(
-#         name="Try to reconnect to router after reload.",
-#         task=reconnect,
-#     )
-#     if not r[0].result:
-#         return Result(
-#             host=task.host,
-#             result=f"{task.host} failed to reconnect.",
-#         )
-#     r = task.run(
-#         name="Run install commit.",
-#         task=run_install,
-#         install_id=-1
-#     )
-#     r = task.run(
-#         name="Check router running software version.",
-#         task=run_check_sw_ver,
-#         # network_name=network_name
-#     )
-#     sw_ver = r[0].result
-#     return Result(
-#         host=task.host,
-#         result=f"{task.host} is now running {sw_ver}.",
-#     )
-
-def get_os_ver(task: Task, network_name: str) -> Result:
-    facts = task.run(napalm_get, getters = ["facts"])
-    os_ver = facts.result['facts']['os_version']
+def configure_CLI(task: Task, commands: list) -> Result:
+    try:
+        my_connection = ConnectHandler(
+            ip=task.host.hostname,
+            username=task.host.username,
+            password=task.host.password,
+            device_type='cisco_xr',
+            port=task.host.port,
+        )
+    except Exception as e:
+        logger.info(f"{task.host}: Could not connect to device.")
+        return Result(
+            host=task.host,
+            result=result
+        )
+    my_connection.find_prompt()
+    device_response = my_connection.send_config_set(commands)
+    logger.info(device_response)
+    if "success" in device_response.lower():
+        result = True
+    else:
+        result = False
+    my_connection.disconnect()
     return Result(
         host=task.host,
-        result=f"{os_ver}"
+        result=result
     )
 
-def run_copy_file(task: Task, image_file_id: int) -> Result:
+def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
+    pre_check_path = os.path.join(pre_check_root, network_name, current_time)
+    logger.info("============================================================")
+    logger.info(f"Copying pre-check data to dir: {pre_check_path}")
+    logger.info("============================================================")
+
+    if not os.path.isdir(pre_check_path):
+        os.makedirs(pre_check_path, exist_ok=True)
+
+    try:
+        my_connection = ConnectHandler(
+            ip=task.host.hostname,
+            username=task.host.username,
+            password=task.host.password,
+            device_type='cisco_xr',
+            port=task.host.port,
+        )
+    except Exception as e:
+        logger.info(f"{task.host}: Could not connect to device.")
+        return Result(
+            host=task.host,
+            result=result
+        )
+    my_connection.find_prompt()
+    device_response = my_connection.send_command("term len 0")
+    logger.info(device_response)
+    command_responses = ""
+    for command in commands:
+        device_response = my_connection.send_command(command, read_timeout=60)
+        device_response = device_response.strip()
+        device_response = re.sub('\s*$', "", device_response)
+        command_responses += f"********************************* {command} *************************************\n"
+        command_responses += device_response + "\n"
+    pre_check_file = f"{pre_check_path}/{str(task.host.name)}_pre_checks.txt"
+    logger.info(f"DEVICE: {str(task.host.name)} Pre-checks: {pre_check_file}")
+    logger.info("============================================================")
+    lines = command_responses.splitlines(True)
+    with open(pre_check_file, 'a', encoding="utf8") as f:
+        f.writelines(lines)
+        f.close()
+    my_connection.disconnect()
+
+
+def run_copy_file(task: Task) -> Result:
     my_connection = ConnectHandler(
         ip=task.host.hostname,
         username=task.host.username,
@@ -213,7 +229,7 @@ def run_copy_file(task: Task, image_file_id: int) -> Result:
         port=task.host.port,
     )
     my_connection.find_prompt()
-    copy_command = f"copy http://{task.host['http_server_ip']}/images/{task.host['image_files'][image_file_id]} harddisk:"
+    copy_command = f"copy http://{task.host['http_server_ip']}/images/{task.host['image_file']} harddisk:"
     device_response = my_connection.send_command_timing(copy_command, read_timeout=60)
     logger.info(device_response)
     if 'Destination filename' in device_response:
@@ -229,19 +245,27 @@ def run_copy_file(task: Task, image_file_id: int) -> Result:
         result=result
     )
 
+
 def run_check_sw_ver(task: Task) -> Result:
-    my_connection = ConnectHandler(
-        ip=task.host.hostname,
-        username=task.host.username,
-        password=task.host.password,
-        device_type='cisco_xr',
-        port=task.host.port,
-    )
+    result = "unknown"
+    try:
+        my_connection = ConnectHandler(
+            ip=task.host.hostname,
+            username=task.host.username,
+            password=task.host.password,
+            device_type='cisco_xr',
+            port=task.host.port,
+        )
+    except Exception as e:
+        logger.info(f"{task.host}: Could not connect to device.")
+        return Result(
+            host=task.host,
+            result=result
+        )
     my_connection.find_prompt()
     copy_command = f"show version"
     device_response = my_connection.send_command_timing(copy_command, read_timeout=60)
     response_lines = device_response.split('\n')
-    result= "unknown"
     for line in response_lines:
         if line.startswith(" Version"):
             result = line.split(':')[1]
@@ -250,6 +274,7 @@ def run_check_sw_ver(task: Task) -> Result:
         host=task.host,
         result=result
     )
+
 
 def run_install(task: Task, install_command: str) -> Result:
     my_connection = ConnectHandler(
@@ -272,8 +297,12 @@ def run_install(task: Task, install_command: str) -> Result:
             # Read the device_response from the connection
             device_response = my_connection.read_channel()
             total_response += device_response
+            response_strings = ["completed without error",
+                                "install add action completed successfully",
+                                "activate action completed successfully"
+                                ]
             # Check if the completion message is in the device_response
-            if "completed without error" or "activate action completed successfully" in total_response:
+            if any(response in total_response.lower() for response in response_strings):
                 upgrade_complete = True
                 logger.info(f"{task.host}: Upgrade completed without error.")
             elif "fail" in total_response.lower():
@@ -311,7 +340,7 @@ def reconnect(task: Task) -> Result:
 
         # Try to reconnect
         count = 0
-        while True and count <= 10:
+        while True and count <= 25:
             try:
                 my_connection = ConnectHandler(
                     ip=task.host.hostname,
@@ -336,6 +365,7 @@ def reconnect(task: Task) -> Result:
         result=result
     )
 
+
 def pause_upgrade(task: Task) -> Result:
     logger.info(f"{task.host}: Pausing 2 minutes before checking software version...")
     time.sleep(120)  # Wait for 2 minutes (adjust as necessary)
@@ -345,14 +375,13 @@ def pause_upgrade(task: Task) -> Result:
     )
 
 
-def pull_configs_ssh(task: Task, network_name: str) -> Result:
+def backup_configs_ssh(task: Task, network_name: str) -> Result:
     topo_path = os.path.join(config_root, network_name, current_time)
     logger.info("============================================================")
     logger.info(f"Copying configurations to dir: {topo_path}")
     logger.info("============================================================")
 
     if not os.path.isdir(topo_path):
-        # os.mkdir(topo_path)
         os.makedirs(topo_path, exist_ok=True)
 
     my_connection = ConnectHandler(

@@ -1,5 +1,5 @@
 # Python XR Upgrade
-This python script is intended as an example workflow for upgrading IOS XR routers.  
+This python script is intended as an example of automating IOS XR router software upgrades.  
 
 Before using for production purposes:
 * additional pre- and post- checks should be added
@@ -17,7 +17,6 @@ sudo apt -y install python3.10-venv
 python3 -m venv xrupgrade_venv
 source xrupgrade_venv/bin/activate
 pip install nornir
-pip install nornir-napalm
 pip install nornir-utils
 ```
 ### Install HTTP Server
@@ -36,16 +35,9 @@ Copy iso image files to the directory configured in the previous step.
 ### Update YAML files
 Update the following files:
 * /inventory/<network-name>/hosts.yaml
-* /inventory/<network-name>/config.yaml
-* /inventory/<network-name>/groups.yaml
-
-## Enable Netconf on Routers
-Make sure netconf is enabled on the routers
-```commandline
-netconf-yang agent
-ssh server netconf vrf default
-```
+* /inventory/\<network-name\>/config.yaml
+* /inventory/\<network-name\>/groups.yaml
 ## Run the script
 ```commandline
-TBA
+python main.py --network_name test_network --upgrade_groups 8k_routers
 ```

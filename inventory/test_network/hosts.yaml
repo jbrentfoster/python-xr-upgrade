@@ -1,7 +1,7 @@
 ---
 c8k-1:
   hostname: 172.26.228.238
-  port: 25509
+  port: 48259
   groups:
     - 8k_routers
   connection_options:
@@ -14,11 +14,11 @@ c8k-1:
         fast_cli: False
 #        expect_string: r'#'
   data:
-    hostname: "c8k-1"
+    hostname: c8k-1
 
 c8k-2:
   hostname: 172.26.228.238
-  port: 47417
+  port: 35277
   groups:
     - 8k_routers
   connection_options:
@@ -35,7 +35,7 @@ c8k-2:
 
 #asr9k-1:
 #  hostname: 172.26.228.238
-#  port: 15323
+#  port: 49799
 #  groups:
 #    - 9k_routers
 #  connection_options:
@@ -48,21 +48,21 @@ c8k-2:
 #        fast_cli: False
 ##        expect_string: r'#'
 #  data:
-#    hostname: "c8k-1"
+#    hostname: asr9k-1
 
-asr9k-2:
-  hostname: 172.26.228.238
-  port: 42805
-  groups:
-    - 9k_routers
-  connection_options:
-    napalm:
-      extras:
-        optional_args: {'allow_agent': True}
-    netmiko:
-      extras:
-        conn_timeout: 60
-        fast_cli: False
-#        expect_string: r'#'
-  data:
-    hostname: c8k-2
+#asr9k-2:
+#  hostname: 172.26.228.238
+#  port: 19655
+#  groups:
+#    - 9k_routers
+#  connection_options:
+#    napalm:
+#      extras:
+#        optional_args: {'allow_agent': True}
+#    netmiko:
+#      extras:
+#        conn_timeout: 60
+#        fast_cli: False
+##        expect_string: r'#'
+#  data:
+#    hostname: asr9k-2

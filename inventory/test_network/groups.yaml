@@ -15,10 +15,39 @@ defaults:
     xr_7: True
     target_os_ver: 7.9.2
     image_file: 8000-x64-7.9.2.iso
-    http_server_ip: 192.168.122.251
+    http_server_ip: 192.168.122.72
     install_commands:
       - command: "install replace /harddisk:/8000-x64-7.9.2.iso noprompt reload commit synchronous"
         reload: True
+    pre_check_commands:
+      - "show platform"
+      - "show inventory"
+      - "show version"
+      - "show interface description"
+      - "show interface summary"
+      - "show ipv4 interface brief"
+      - "show ipv6 interface brief"
+      - "show bgp all all summary"
+      - "show isis neighbor"
+      - "show isis adjacency"
+      - "show mpls ldp int brief"
+      - "show mpls forwarding"
+      - "show mpls ldp neighbor"
+      - "show mpls ldp summary"
+      - "show mpls ldp bindings"
+      - "show mpls interface"
+      - "show run mpls traffic-eng"
+      - "show l2vpn xconnect"
+      - "show l2vpn bridge-domain"
+      - "show pim neighbor"
+      - "show pim topology"
+      - "show route ipv4 summary"
+      - "show route ipv6 summary"
+      - "show cef summary"
+      - "show lldp neighbor"
+      - "show mrib route summary"
+      - "show mrib route"
+      - "show mfib route rate"
 
 9k_routers:
   username: cisco
@@ -31,13 +60,43 @@ defaults:
   data:
     xr_7: True
     target_os_ver: 7.9.2
-    image_files:
-      - asr9k-mini-x64-7.9.2.iso # upgrade id 0
-    http_server_ip: 192.168.122.251
+    image_file: asr9k-full-x64-7.9.2.iso
+    http_server_ip: 192.168.122.72
     install_commands:
-      - command: "install add source /harddisk: /asr9k-mini-x64-7.9.2.iso synchronous"
+#      - command: "install replace /harddisk:/asr9k-full-x64-7.9.2.iso"
+#        reload: True
+      - command: "install add source /harddisk: asr9k-full-x64-7.9.2.iso synchronous"
         reload: False
-      - command: "install activate asr9k-mini-x64-7.9.2 noprompt synchronous"
+      - command: "install activate asr9k-full-x64-7.9.2 noprompt synchronous"
         reload: True
       - command: "install commit synchronous"
         reload: False
+    pre_check_commands:
+      - "show platform"
+      - "show inventory"
+      - "show version"
+      - "show interface description"
+      - "show interface summary"
+      - "show ipv4 interface brief"
+      - "show ipv6 interface brief"
+      - "show bgp all all summary"
+      - "show isis neighbor"
+      - "show isis adjacency"
+      - "show mpls ldp int brief"
+      - "show mpls forwarding"
+      - "show mpls ldp neighbors"
+      - "show mpls ldp summary"
+      - "show mpls ldp bindings"
+      - "show mpls interface"
+      - "show run mpls traffic-eng"
+      - "show l2vpn xconnect"
+      - "show l2vpn bridge-domain"
+      - "show pim neighbor"
+      - "show pim topology"
+      - "show route ipv4 summary"
+      - "show route ipv6 summary"
+      - "show cef summary"
+      - "show lldp neighbor"
+      - "show mrib route summary"
+      - "show mrib route"
+      - "show mfib route rate"
