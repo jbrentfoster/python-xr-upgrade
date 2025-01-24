@@ -5,9 +5,6 @@ c8k-1:
   groups:
     - 8k_routers
   connection_options:
-    napalm:
-      extras:
-        optional_args: {'allow_agent': True}
     netmiko:
       extras:
         conn_timeout: 60
@@ -22,9 +19,6 @@ c8k-2:
   groups:
     - 8k_routers
   connection_options:
-    napalm:
-      extras:
-        optional_args: {'allow_agent': True}
     netmiko:
       extras:
         conn_timeout: 60
@@ -39,9 +33,6 @@ asr9k-1:
   groups:
     - 9k_routers
   connection_options:
-    napalm:
-      extras:
-        optional_args: {'allow_agent': True}
     netmiko:
       extras:
         conn_timeout: 60
@@ -56,9 +47,6 @@ asr9k-2:
   groups:
     - 9k_routers
   connection_options:
-    napalm:
-      extras:
-        optional_args: {'allow_agent': True}
     netmiko:
       extras:
         conn_timeout: 60

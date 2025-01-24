@@ -3849,3 +3849,40 @@ Host: c8k-2
 2025-01-24 09:45:46,001 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
 2025-01-24 09:45:46,001 -  nornir.core -     INFO -       main() - Script completed.
 2025-01-24 09:45:46,001 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-0945-41
+2025-01-24 10:14:11,757 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 4 hosts
+2025-01-24 10:14:12,027 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-24 10:14:21,767 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-24 10:14:21,769 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-24 10:14:21,771 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:14:21,772 -  nornir.core -     INFO -       main() - 
+Host: c8k-2
+- Hostname: c8k-2
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:14:21,773 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:14:21,774 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:14:21,775 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-24 10:14:21,776 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:14:21,777 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:14:21,777 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-24 10:14:21,778 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-1014-10
