@@ -11,7 +11,7 @@ Before using for production purposes:
 ```commandline
 git clone https://wwwin-github.cisco.com/brfoster/python-xr-upgrade.git
 ```
-### Add python virtual environment and install Ansible, Napalm
+### Add python virtual environment and install Nornir
 ```
 sudo apt -y install python3.10-venv
 python3 -m venv xrupgrade_venv
