@@ -34,10 +34,10 @@ Copy iso image files to the directory configured in the previous step.
 
 ### Update YAML files
 Update the following files:
-* /inventory/<network-name>/hosts.yaml
+* /inventory/\<network-name\>/hosts.yaml
 * /inventory/\<network-name\>/config.yaml
 * /inventory/\<network-name\>/groups.yaml
 ## Run the script
 ```commandline
-python main.py --network_name test_network --upgrade_groups 8k_routers
+python main.py --network_name test_network --upgrade_groups 8k_routers,9k_routers
 ```
