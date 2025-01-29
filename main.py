@@ -159,7 +159,7 @@ def configure_CLI(task: Task, commands: list) -> Result:
             port=task.host.port,
         )
     except Exception as e:
-        logger.info(f"{task.host}: Could not connect to device.")
+        logger.error(f"{task.host}: Could not connect to device.  Failed to execute CLI commands: {commands}")
         return Result(
             host=task.host,
             result=result
@@ -167,9 +167,13 @@ def configure_CLI(task: Task, commands: list) -> Result:
     my_connection.find_prompt()
     device_response = my_connection.send_config_set(commands)
     logger.info(device_response)
+    deviceResponse = my_connection.commit()
+    logger.info(device_response)
     if "success" in device_response.lower():
+        logger.info(f"{task.host}: Successfully applied commands: {commands}")
         result = True
     else:
+        logger.error(f"{task.host}: Failed to apply commands: {commands}")
         result = False
     my_connection.disconnect()
     return Result(
