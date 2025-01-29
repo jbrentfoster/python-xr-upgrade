@@ -14,6 +14,7 @@ import re
 current_time = str(datetime.now().strftime('%Y-%m-%d-%H%M-%S'))
 config_root = "backup_configs/"
 pre_check_root = "pre_checks/"
+post_check_root = "post_checks/"
 gen_configs_root = "configs/"
 
 # get command line inputs
@@ -101,9 +102,10 @@ def upgrade(task: Task, network_name: str) -> Result:
     )
     task.run(
         name="Running pre-checks.",
-        task=run_pre_checks,
+        task=run_checks,
         network_name=args.network_name,
         commands=task.host['pre_check_commands'],
+        check_type="pre_check"
     )
     r = task.run(
         name="Copy image file to the router.",
@@ -145,6 +147,13 @@ def upgrade(task: Task, network_name: str) -> Result:
                     host=task.host,
                     result=f"{task.host} failed to reconnect.",
                 )
+    task.run(
+        name="Running post-checks.",
+        task=run_checks,
+        network_name=args.network_name,
+        commands=task.host['pre_check_commands'],
+        check_type="post_check"
+    )
     r = task.run(
         name="Check router running software version.",
         task=run_check_sw_ver,
@@ -190,15 +199,25 @@ def configure_CLI(task: Task, commands: list) -> Result:
     )
 
 
-def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
-    pre_check_path = os.path.join(pre_check_root, network_name, current_time)
-    logger.info("============================================================")
-    logger.info(f"Copying pre-check data to dir: {pre_check_path}")
-    logger.info("============================================================")
+def run_checks(task: Task, network_name: str, commands: list, check_type: str) -> Result:
+    if check_type == "pre_check":
+        check_path = os.path.join(pre_check_root, network_name, current_time)
+    elif check_type == "post_check":
+        check_path = os.path.join(post_check_root, network_name, current_time)
 
-    if not os.path.isdir(pre_check_path):
-        os.makedirs(pre_check_path, exist_ok=True)
+    try:
+        logger.info("============================================================")
+        logger.info(f"Copying check data to dir: {check_path}")
+        logger.info("============================================================")
 
+        if not os.path.isdir(check_path):
+            os.makedirs(check_path, exist_ok=True)
+    except Exception as e:
+        logger.error((f"{task.host}: Invalid path for pre or post check directory."))
+        return Result(
+            host=task.host,
+            result=False
+        )
     try:
         my_connection = ConnectHandler(
             ip=task.host.hostname,
@@ -223,7 +242,7 @@ def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
         device_response = re.sub('\s*$', "", device_response)
         command_responses += f"********************************* {command} *************************************\n"
         command_responses += device_response + "\n"
-    pre_check_file = f"{pre_check_path}/{str(task.host.name)}_pre_checks.txt"
+    pre_check_file = f"{check_path}/{str(task.host.name)}_pre_checks.txt"
     logger.info(f"DEVICE: {str(task.host.name)} Pre-checks: {pre_check_file}")
     logger.info("============================================================")
     lines = command_responses.splitlines(True)
