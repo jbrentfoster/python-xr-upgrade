@@ -1,7 +1,7 @@
 ---
 c8k-1:
-  hostname: 172.26.228.238
-  port: 48259
+  hostname: 10.122.19.43
+  port: 35724
   groups:
     - 8k_routers
   connection_options:
@@ -13,19 +13,19 @@ c8k-1:
   data:
     hostname: c8k-1
 
-c8k-2:
-  hostname: 172.26.228.238
-  port: 35277
-  groups:
-    - 8k_routers
-  connection_options:
-    netmiko:
-      extras:
-        conn_timeout: 60
-        fast_cli: False
-#        expect_string: r'#'
-  data:
-    hostname: c8k-2
+#c8k-2:
+#  hostname: 172.26.228.238
+#  port: 35277
+#  groups:
+#    - 8k_routers
+#  connection_options:
+#    netmiko:
+#      extras:
+#        conn_timeout: 60
+#        fast_cli: False
+##        expect_string: r'#'
+#  data:
+#    hostname: c8k-2
 
 asr9k-1:
   hostname: 172.26.228.238

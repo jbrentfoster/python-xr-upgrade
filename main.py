@@ -93,7 +93,7 @@ def upgrade(task: Task, network_name: str) -> Result:
     )
     task.run(
         name="Running pre-checks.",
-        task=run_pre_checks  ,
+        task=run_pre_checks,
         network_name=args.network_name,
         commands=task.host['pre_check_commands'],
     )
@@ -104,17 +104,17 @@ def upgrade(task: Task, network_name: str) -> Result:
     if not r[0].result:
         return Result(
             host=task.host,
-            result=f"{task.host} image transfer failed.",
+            result=f"{task.host} image transfer failed. Exiting upgrade.",
         )
     r = task.run(
         name="Enable fpd auto upgrade.",
         task=configure_CLI,
         commands=["fpd auto-upgrade enable"],
     )
-    if r[0].failed:
+    if not r[0].result:
         return Result(
             host=task.host,
-            result=f"{task.host} failed to enable fpd auto upgrade",
+            result=f"{task.host} failed to enable fpd auto upgrade.  Exiting upgrade.",
         )
     for install_command in task.host['install_commands']:
         r = task.run(
@@ -162,27 +162,27 @@ def configure_CLI(task: Task, commands: list) -> Result:
         logger.error(f"{task.host}: Could not connect to device.  Failed to execute CLI commands: {commands}")
         return Result(
             host=task.host,
-            result=result
+            result=False
         )
     my_connection.find_prompt()
     device_response = my_connection.send_config_set(commands)
     logger.info(device_response)
-    deviceResponse = my_connection.commit()
+    device_response = my_connection.commit()
     logger.info(device_response)
-    if "success" in device_response.lower():
+    if "fail" not in device_response.lower():
         logger.info(f"{task.host}: Successfully applied commands: {commands}")
         result = True
-    else:
-        logger.error(f"{task.host}: Failed to apply commands: {commands}")
-        result = False
+    # else:
+    #     logger.error(f"{task.host}: Failed to apply commands: {commands}")
+    #     result = False
     my_connection.disconnect()
     return Result(
         host=task.host,
         result=result
     )
 
+
 def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
-    result = False
     pre_check_path = os.path.join(pre_check_root, network_name, current_time)
     logger.info("============================================================")
     logger.info(f"Copying pre-check data to dir: {pre_check_path}")
@@ -203,7 +203,7 @@ def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
         logger.info(f"{task.host}: Could not connect to device. Pre-checks failed.")
         return Result(
             host=task.host,
-            result=result
+            result=False
         )
     my_connection.find_prompt()
     device_response = my_connection.send_command("term len 0")
@@ -230,13 +230,20 @@ def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
 
 
 def run_copy_file(task: Task) -> Result:
-    my_connection = ConnectHandler(
-        ip=task.host.hostname,
-        username=task.host.username,
-        password=task.host.password,
-        device_type='cisco_xr',
-        port=task.host.port,
-    )
+    try:
+        my_connection = ConnectHandler(
+            ip=task.host.hostname,
+            username=task.host.username,
+            password=task.host.password,
+            device_type='cisco_xr',
+            port=task.host.port,
+        )
+    except Exception as e:
+        logger.info(f"{task.host}: Could not connect to device. Failed to copy image file.")
+        return Result(
+            host=task.host,
+            result=False
+        )
     my_connection.find_prompt()
     copy_command = f"copy http://{task.host['http_server_ip']}/images/{task.host['image_file']} harddisk:"
     device_response = my_connection.send_command_timing(copy_command, read_timeout=60)
@@ -266,7 +273,7 @@ def run_check_sw_ver(task: Task) -> Result:
             port=task.host.port,
         )
     except Exception as e:
-        logger.info(f"{task.host}: Could not connect to device.")
+        logger.info(f"{task.host}: Could not connect to device. Failed to check software version.")
         return Result(
             host=task.host,
             result=result
@@ -286,13 +293,20 @@ def run_check_sw_ver(task: Task) -> Result:
 
 
 def run_install(task: Task, install_command: str) -> Result:
-    my_connection = ConnectHandler(
-        ip=task.host.hostname,
-        username=task.host.username,
-        password=task.host.password,
-        device_type='cisco_xr',
-        port=task.host.port,
-    )
+    try:
+        my_connection = ConnectHandler(
+            ip=task.host.hostname,
+            username=task.host.username,
+            password=task.host.password,
+            device_type='cisco_xr',
+            port=task.host.port,
+        )
+    except Exception as e:
+        logger.info(f"{task.host}: Could not connect to device. Failed to initiate upgrade installation.")
+        return Result(
+            host=task.host,
+            result=False
+        )
     my_connection.find_prompt()
     device_response = my_connection.send_command_timing(install_command, read_timeout=1800)
     logger.info(device_response)

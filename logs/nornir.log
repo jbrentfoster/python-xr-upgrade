@@ -4142,3 +4142,659 @@ Jan 24 15:35:50 Ending operation 2
 RP/0/RSP0/CPU0:asr9k-2#
 2025-01-24 10:55:14,872 -  nornir.core -     INFO -       main() - Script completed.
 2025-01-24 10:55:14,874 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-1029-41
+2025-01-29 11:38:08,566 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:38:18,587 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device.
+2025-01-29 11:38:26,371 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-29 11:38:26,372 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-29 11:38:26,374 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:38:26,376 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:38:26,378 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:38:26,378 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:38:26,379 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:38:26,380 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-29 11:38:26,380 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 11:38:26,381 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1138-02
+2025-01-29 11:39:10,127 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:39:10,493 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device.
+2025-01-29 11:39:20,144 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-29 11:39:20,145 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-29 11:39:20,147 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:39:20,149 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:39:20,150 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:39:20,150 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:39:20,151 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:39:20,151 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-29 11:39:20,153 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 11:39:20,153 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1139-09
+2025-01-29 11:39:38,156 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:39:48,165 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-29 11:39:48,165 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-29 11:40:14,265 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:40:14,266 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:40:14,267 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:40:14,269 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:40:14,270 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:40:14,273 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:40:14,277 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-29 11:40:14,283 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 11:40:14,284 -  nornir.core -     INFO - backup_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-29-1139-37
+2025-01-29 11:40:14,287 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 11:40:16,171 -  nornir.core -     INFO - backup_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/test_network\2025-01-29-1139-37/c8k-1.txt
+2025-01-29 11:40:16,173 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 11:40:16,213 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 11:40:16,215 -  nornir.core -     INFO - run_pre_checks() - Copying pre-check data to dir: pre_checks/test_network\2025-01-29-1139-37
+2025-01-29 11:40:16,218 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 11:40:25,123 -  nornir.core -     INFO - run_pre_checks() - 
+Wed Jan 29 16:40:23.336 UTC
+2025-01-29 11:40:30,293 -  nornir.core -     INFO - run_pre_checks() - DEVICE: c8k-1 Pre-checks: pre_checks/test_network\2025-01-29-1139-37/c8k-1_pre_checks.txt
+2025-01-29 11:40:30,294 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 11:46:59,144 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:46:59,540 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device.
+2025-01-29 11:48:06,024 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:48:06,370 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device.
+2025-01-29 11:48:16,042 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-29 11:48:16,042 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-29 11:48:16,046 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:48:16,046 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:48:16,048 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:48:16,048 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:48:16,049 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:48:16,050 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-29 11:48:16,050 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 11:48:16,050 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1148-05
+2025-01-29 11:50:12,452 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:50:12,779 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:50:22,470 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:50:22,470 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device. Failed to check software version.
+2025-01-29 11:50:22,472 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:50:22,473 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:50:22,474 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:50:22,474 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:50:22,474 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:50:22,475 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-29 11:50:22,476 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 11:50:22,477 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1150-10
+2025-01-29 11:53:23,214 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:53:23,551 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:53:33,222 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device. Failed to check software version.
+2025-01-29 11:53:33,222 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:53:33,225 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:53:33,225 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:53:33,225 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:53:33,226 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:53:33,227 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:53:33,228 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-29 11:53:33,228 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 11:53:33,228 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1153-22
+2025-01-29 11:54:29,920 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:55:20,888 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:55:45,216 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 3 hosts
+2025-01-29 11:55:45,557 -  nornir.core -     INFO - run_check_sw_ver() - c8k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:55:55,228 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:55:55,228 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device. Failed to check software version.
+2025-01-29 11:55:55,230 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:55:55,231 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:55:55,231 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:55:55,234 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:55:55,234 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:55:55,236 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-29 11:55:55,236 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 11:55:55,237 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1155-44
+2025-01-29 11:58:29,877 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 11:58:30,545 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 11:58:33,130 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 11:58:33,130 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:58:33,131 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 11:58:33,132 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 11:58:33,132 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 11:58:33,133 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 11:58:33,134 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 11:58:33,135 -  nornir.core -     INFO - backup_configs_ssh() - Copying configurations to dir: backup_configs/comcast_test\2025-01-29-1158-29
+2025-01-29 11:58:33,135 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 11:58:35,010 -  nornir.core -     INFO - backup_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/comcast_test\2025-01-29-1158-29/c8k-1.txt
+2025-01-29 11:58:35,011 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 11:58:35,055 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 11:58:35,056 -  nornir.core -     INFO - run_pre_checks() - Copying pre-check data to dir: pre_checks/comcast_test\2025-01-29-1158-29
+2025-01-29 11:58:35,056 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 11:58:36,730 -  nornir.core -     INFO - run_pre_checks() - 
+Wed Jan 29 16:58:34.988 UTC
+2025-01-29 11:58:41,750 -  nornir.core -     INFO - run_pre_checks() - DEVICE: c8k-1 Pre-checks: pre_checks/comcast_test\2025-01-29-1158-29/c8k-1_pre_checks.txt
+2025-01-29 11:58:41,751 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:00:08,647 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:ios#copy http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso harddisk:
+
+Wed Jan 29 17:00:04.669 UTC
+Destination filename [/harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso]?
+2025-01-29 12:03:31,477 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:ios#copy http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso harddisk:
+
+Wed Jan 29 17:00:04.669 UTC
+Destination filename [/harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso]?
+Accessing http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1516740608 Bytes
+
+
+Copy operation success
+2025-01-29 12:04:43,130 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 17:04:41.007 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00002000-00003045-00000000     con0_RP0_C cisco123 Tue Jan 28 17:16:57 2025 
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:04:43,304 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 17:04:41.007 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00002000-00003045-00000000     con0_RP0_C cisco123 Tue Jan 28 17:16:57 2025 
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:04:43,309 -  nornir.core -    ERROR - configure_CLI() - c8k-1: Failed to apply commands: ['fpd auto-upgrade enable']
+2025-01-29 12:05:12,559 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RP0/CPU0:ios#install replace /harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso noprompt reload commit synchronous
+
+Wed Jan 29 17:05:06.585 UTC
+Starting:
+  install replace /harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso commit
+Transaction 2
+Press Ctrl-C to return to the exec prompt. This will not cancel the install operation
+
+Current activity: Initializing .
+2025-01-29 12:05:12,560 -  nornir.core -     INFO - run_install() - 
+2025-01-29 12:07:49,920 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 12:07:50,546 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 12:07:53,241 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 12:07:53,242 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 12:07:53,243 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 12:07:53,244 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 12:07:53,245 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 12:07:53,246 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 12:07:53,247 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 12:07:53,248 -  nornir.core -     INFO - backup_configs_ssh() - Copying configurations to dir: backup_configs/comcast_test\2025-01-29-1207-47
+2025-01-29 12:07:53,250 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 12:07:55,254 -  nornir.core -     INFO - backup_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/comcast_test\2025-01-29-1207-47/c8k-1.txt
+2025-01-29 12:07:55,255 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 12:07:55,291 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:07:55,292 -  nornir.core -     INFO - run_pre_checks() - Copying pre-check data to dir: pre_checks/comcast_test\2025-01-29-1207-47
+2025-01-29 12:07:55,293 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:07:56,850 -  nornir.core -     INFO - run_pre_checks() - 
+Wed Jan 29 17:07:55.075 UTC
+2025-01-29 12:08:02,323 -  nornir.core -     INFO - run_pre_checks() - DEVICE: c8k-1 Pre-checks: pre_checks/comcast_test\2025-01-29-1207-47/c8k-1_pre_checks.txt
+2025-01-29 12:08:02,325 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:08:06,014 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:ios#copy http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso harddisk:
+
+Wed Jan 29 17:08:02.057 UTC
+Destination filename [/harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso]?
+2025-01-29 12:11:35,199 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:ios#copy http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso harddisk:
+
+Wed Jan 29 17:08:02.057 UTC
+Destination filename [/harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso]?
+Accessing http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1516740608 Bytes
+
+
+Copy operation success
+2025-01-29 12:11:37,135 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 17:11:35.019 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00002000-00003045-00000000     con0_RP0_C cisco123 Tue Jan 28 17:16:57 2025 
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:11:37,325 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 17:11:35.019 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00002000-00003045-00000000     con0_RP0_C cisco123 Tue Jan 28 17:16:57 2025 
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:11:37,327 -  nornir.core -    ERROR - configure_CLI() - c8k-1: Failed to apply commands: ['fpd auto-upgrade enable']
+2025-01-29 12:13:50,048 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 12:13:50,653 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 12:13:53,404 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 12:13:53,405 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 12:13:53,406 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 12:13:53,407 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 12:13:53,407 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 12:13:53,408 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 12:13:55,689 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 17:13:53.489 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00002000-00003045-00000000     con0_RP0_C cisco123 Tue Jan 28 17:16:57 2025 
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:13:55,917 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 17:13:53.489 UTC
+Current Configuration Session  Line       User     Date                     Lock
+00002000-00003045-00000000     con0_RP0_C cisco123 Tue Jan 28 17:16:57 2025 
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:13:55,918 -  nornir.core -    ERROR - configure_CLI() - c8k-1: Failed to apply commands: ['fpd auto-upgrade enable']
+2025-01-29 12:14:07,385 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 12:14:07,387 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1213-48
+2025-01-29 12:29:53,025 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 12:29:53,678 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 12:29:56,506 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 12:29:56,507 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 12:29:56,508 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 12:29:56,509 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 12:29:56,510 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 12:29:56,512 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 12:29:56,513 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 12:29:56,514 -  nornir.core -     INFO - backup_configs_ssh() - Copying configurations to dir: backup_configs/comcast_test\2025-01-29-1229-51
+2025-01-29 12:29:56,514 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 12:29:58,400 -  nornir.core -     INFO - backup_configs_ssh() - DEVICE: c8k-1 Config: backup_configs/comcast_test\2025-01-29-1229-51/c8k-1.txt
+2025-01-29 12:29:58,401 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 12:29:58,446 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:29:58,447 -  nornir.core -     INFO - run_pre_checks() - Copying pre-check data to dir: pre_checks/comcast_test\2025-01-29-1229-51
+2025-01-29 12:29:58,447 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:29:59,940 -  nornir.core -     INFO - run_pre_checks() - 
+Wed Jan 29 17:29:57.315 UTC
+2025-01-29 12:30:05,162 -  nornir.core -     INFO - run_pre_checks() - DEVICE: c8k-1 Pre-checks: pre_checks/comcast_test\2025-01-29-1229-51/c8k-1_pre_checks.txt
+2025-01-29 12:30:05,162 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 12:30:08,861 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:ios#copy http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso harddisk:
+
+Wed Jan 29 17:30:04.022 UTC
+Destination filename [/harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso]?
+2025-01-29 12:33:31,672 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RP0/CPU0:ios#copy http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso harddisk:
+
+Wed Jan 29 17:30:04.022 UTC
+Destination filename [/harddisk:/8000-golden-x86_64-7.9.2-comcast_rev4.iso]?
+Accessing http://10.122.19.55/images/8000-golden-x86_64-7.9.2-comcast_rev4.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1516740608 Bytes
+
+
+Copy operation success
+2025-01-29 12:33:33,498 -  nornir.core -     INFO - configure_CLI() - configure terminal
+
+Wed Jan 29 17:33:30.575 UTC
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:33:33,692 -  nornir.core -     INFO - configure_CLI() - commit
+
+Wed Jan 29 17:33:31.023 UTC
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 12:33:33,693 -  nornir.core -    ERROR - configure_CLI() - c8k-1: Failed to apply commands: ['fpd auto-upgrade enable']
+2025-01-29 12:33:33,973 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-29 12:33:33,973 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-29-1229-51
+2025-01-29 13:41:08,497 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 13:41:09,174 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 13:41:11,717 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 13:41:11,720 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 13:41:11,721 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 13:41:11,723 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 13:41:11,724 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 13:41:11,726 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 13:41:13,540 -  nornir.core -     INFO - configure_CLI() - configure terminal
+
+Wed Jan 29 18:41:10.643 UTC
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 13:41:38,030 -  nornir.core -     INFO - configure_CLI() - commit
+
+Wed Jan 29 18:41:28.266 UTC
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 13:43:02,464 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 13:43:03,069 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device. Failed to check software version.
+2025-01-29 13:43:05,716 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 13:43:05,718 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 13:43:05,719 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 13:43:05,721 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 13:43:05,722 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 13:43:05,725 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 13:43:07,682 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RP0/CPU0:ios#configure terminal
+
+Wed Jan 29 18:43:04.805 UTC
+RP/0/RP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 13:43:16,013 -  nornir.core -     INFO - configure_CLI() - commit
+
+Wed Jan 29 18:43:13.390 UTC
+RP/0/RP0/CPU0:ios(config)#
+2025-01-29 13:43:16,013 -  nornir.core -     INFO - configure_CLI() - c8k-1: Successfully applied commands: ['fpd auto-upgrade enable']
+2025-01-29 13:47:21,915 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 2 hosts
+2025-01-29 13:47:25,988 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-29 13:47:25,990 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 13:47:25,990 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version:  7.1.3
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 13:47:25,991 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-29 13:47:25,991 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.3.3
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-29 13:47:25,992 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version:  7.1.3
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-29 13:47:25,992 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'comcast_test'} on 1 hosts
+2025-01-29 13:47:25,993 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 13:47:25,994 -  nornir.core -     INFO - backup_configs_ssh() - Copying configurations to dir: backup_configs/comcast_test\2025-01-29-1347-20
+2025-01-29 13:47:25,994 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 13:47:28,592 -  nornir.core -     INFO - backup_configs_ssh() - DEVICE: asr9k-1 Config: backup_configs/comcast_test\2025-01-29-1347-20/asr9k-1.txt
+2025-01-29 13:47:28,592 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-29 13:47:28,637 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 13:47:28,637 -  nornir.core -     INFO - run_pre_checks() - Copying pre-check data to dir: pre_checks/comcast_test\2025-01-29-1347-20
+2025-01-29 13:47:28,639 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 13:47:30,503 -  nornir.core -     INFO - run_pre_checks() - 
+Wed Jan 29 18:47:28.542 UTC
+2025-01-29 13:47:42,466 -  nornir.core -     INFO - run_pre_checks() - DEVICE: asr9k-1 Pre-checks: pre_checks/comcast_test\2025-01-29-1347-20/asr9k-1_pre_checks.txt
+2025-01-29 13:47:42,467 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-29 13:47:48,608 -  nornir.core -     INFO - run_copy_file() - 
+Wed Jan 29 18:47:42.520 UTC
+Destination filename [/harddisk:/asr9k-goldenk9-x64-7.9.21-comcast_rev2.iso]?
+2025-01-29 13:49:40,559 -  nornir.core -     INFO - run_copy_file() - 
+Wed Jan 29 18:47:42.520 UTC
+Destination filename [/harddisk:/asr9k-goldenk9-x64-7.9.21-comcast_rev2.iso]?
+Accessing http://10.122.19.55/images/asr9k-goldenk9-x64-7.9.21-comcast_rev2.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1853790208 Bytes
+
+
+Copy operation success
+2025-01-29 13:49:43,381 -  nornir.core -     INFO - configure_CLI() - configure terminal
+
+Wed Jan 29 18:49:40.713 UTC
+RP/0/RSP0/CPU0:ios(config)#fpd auto-upgrade enable
+
+RP/0/RSP0/CPU0:ios(config)#
+2025-01-29 13:49:44,034 -  nornir.core -     INFO - configure_CLI() - commit
+
+Wed Jan 29 18:49:41.632 UTC
+RP/0/RSP0/CPU0:ios(config)#
+2025-01-29 13:49:44,035 -  nornir.core -     INFO - configure_CLI() - asr9k-1: Successfully applied commands: ['fpd auto-upgrade enable']
