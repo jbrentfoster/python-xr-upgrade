@@ -3886,3 +3886,259 @@ Host: asr9k-2
 2025-01-24 10:14:21,777 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
 2025-01-24 10:14:21,777 -  nornir.core -     INFO -       main() - Script completed.
 2025-01-24 10:14:21,778 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-1014-10
+2025-01-24 10:23:11,586 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 4 hosts
+2025-01-24 10:23:11,875 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-24 10:23:21,593 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-24 10:23:21,596 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-24 10:23:21,597 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:23:21,597 -  nornir.core -     INFO -       main() - 
+Host: c8k-2
+- Hostname: c8k-2
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:23:21,599 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:23:21,600 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:23:21,603 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-24 10:23:21,604 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:23:21,606 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:23:21,606 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-24 10:23:21,607 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-1023-10
+2025-01-24 10:24:07,433 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 4 hosts
+2025-01-24 10:24:07,701 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-24 10:24:17,449 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-24 10:25:55,998 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-24 10:25:55,999 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:25:56,000 -  nornir.core -     INFO -       main() - 
+Host: c8k-2
+- Hostname: c8k-2
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:25:56,000 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:25:56,002 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:25:56,003 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-24 10:25:56,004 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:25:56,004 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:25:56,005 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-24 10:25:56,005 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-1024-06
+2025-01-24 10:28:26,147 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 4 hosts
+2025-01-24 10:29:07,171 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-2: Could not connect to device.
+2025-01-24 10:29:41,948 -  nornir.core -     INFO -        run() - Running task 'Check software versions on hosts.' with args {} on 4 hosts
+2025-01-24 10:29:42,225 -  nornir.core -     INFO - run_check_sw_ver() - asr9k-1: Could not connect to device.
+2025-01-24 10:29:47,672 -  nornir.core -     INFO -       main() - Router inventory:
+2025-01-24 10:29:47,673 -  nornir.core -     INFO -       main() - 
+Host: c8k-1
+- Hostname: c8k-1
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:29:47,674 -  nornir.core -     INFO -       main() - 
+Host: c8k-2
+- Hostname: c8k-2
+- Current OS version:  7.9.2
+- Target OS version: 7.9.2
+- Device group: [Group: 8k_routers]
+
+2025-01-24 10:29:47,675 -  nornir.core -     INFO -       main() - 
+Host: asr9k-1
+- Hostname: asr9k-1
+- Current OS version: unknown
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:29:47,677 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version:  7.1.3
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:29:47,678 -  nornir.core -     INFO -       main() - Will upgrade the following routers:
+2025-01-24 10:29:47,679 -  nornir.core -     INFO -       main() - 
+Host: asr9k-2
+- Hostname: asr9k-2
+- Current OS version:  7.1.3
+- Target OS version: 7.9.2
+- Device group: [Group: 9k_routers]
+
+2025-01-24 10:29:47,680 -  nornir.core -  WARNING -        run() - Task 'Running upgrade tasks' has not been run – 0 hosts selected
+2025-01-24 10:29:47,681 -  nornir.core -     INFO -        run() - Running task 'Running upgrade tasks' with args {'network_name': 'test_network'} on 1 hosts
+2025-01-24 10:29:47,683 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-24 10:29:47,683 -  nornir.core -     INFO - backup_configs_ssh() - Copying configurations to dir: backup_configs/test_network\2025-01-24-1029-41
+2025-01-24 10:29:47,684 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-24 10:29:52,491 -  nornir.core -     INFO - backup_configs_ssh() - DEVICE: asr9k-2 Config: backup_configs/test_network\2025-01-24-1029-41/asr9k-2.txt
+2025-01-24 10:29:52,491 -  nornir.core -     INFO - backup_configs_ssh() - ============================================================
+2025-01-24 10:29:52,619 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-24 10:29:52,620 -  nornir.core -     INFO - run_pre_checks() - Copying pre-check data to dir: pre_checks/test_network\2025-01-24-1029-41
+2025-01-24 10:29:52,621 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-24 10:29:56,328 -  nornir.core -     INFO - run_pre_checks() - 
+Fri Jan 24 15:29:55.357 UTC
+2025-01-24 10:30:17,984 -  nornir.core -     INFO - run_pre_checks() - DEVICE: asr9k-2 Pre-checks: pre_checks/test_network\2025-01-24-1029-41/asr9k-2_pre_checks.txt
+2025-01-24 10:30:17,985 -  nornir.core -     INFO - run_pre_checks() - ============================================================
+2025-01-24 10:30:25,844 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.72/images/asr9k-full-x64-7.9.2.iso harddisk:
+
+Fri Jan 24 15:30:20.800 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.9.2.iso]?
+2025-01-24 10:33:15,199 -  nornir.core -     INFO - run_copy_file() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#copy http://192.168.122.72/images/asr9k-full-x64-7.9.2.iso harddisk:
+
+Fri Jan 24 15:30:20.800 UTC
+Destination filename [/harddisk:/asr9k-full-x64-7.9.2.iso]?
+Accessing http://192.168.122.72/images/asr9k-full-x64-7.9.2.iso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Successfully copied 1783119872 Bytes
+
+
+Copy operation success
+2025-01-24 10:33:20,093 -  nornir.core -     INFO - configure_CLI() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#configure terminal
+
+Fri Jan 24 15:33:18.095 UTC
+RP/0/RSP0/CPU0:asr9k-2(config)#fpd auto-upgrade enable
+
+RP/0/RSP0/CPU0:asr9k-2(config)#
+2025-01-24 10:33:26,293 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: asr9k-full-x64-7.9.2.iso synchronous
+
+Fri Jan 24 15:33:23.326 UTC
+
+2025-01-24 10:33:26,294 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:34:26,301 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:35:02,306 -  nornir.core -     INFO - run_install() - asr9k-2: Upgrade completed without error.
+2025-01-24 10:35:02,307 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install add source /harddisk: asr9k-full-x64-7.9.2.iso synchronous
+
+Fri Jan 24 15:33:23.326 UTC
+Jan 24 15:33:25 Install operation 1 started by cisco:
+ install add source /harddisk: asr9k-full-x64-7.9.2.iso synchronous 
+Jan 24 15:33:26 Action 1: install add action started
+Jan 24 15:34:55 Packages added:
+Jan 24 15:34:55     asr9k-full-x64-7.9.2
+Jan 24 15:34:55 Action 1: install add action completed successfully
+Jan 24 15:34:57 Install operation 1 finished successfully
+Jan 24 15:34:57 Ending operation 1
+RP/0/RSP0/CPU0:asr9k-2#
+2025-01-24 10:35:08,519 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-full-x64-7.9.2 noprompt synchronous
+
+Fri Jan 24 15:35:05.576 UTC
+
+2025-01-24 10:35:08,521 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:36:08,528 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:37:08,534 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:38:08,541 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:39:08,547 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:40:08,554 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:41:08,561 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:42:08,568 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:43:08,575 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:44:08,582 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:45:08,589 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:46:08,596 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:47:08,603 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:48:08,611 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:49:08,618 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:50:08,624 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:51:08,632 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:52:08,639 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:53:08,645 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:54:08,651 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:55:08,657 -  nornir.core -     INFO - run_install() - 
+2025-01-24 10:55:14,660 -  nornir.core -     INFO - run_install() - asr9k-2: Time exceeded, exiting install task.
+2025-01-24 10:55:14,661 -  nornir.core -     INFO - run_install() - 
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#
+
+RP/0/RSP0/CPU0:asr9k-2#install activate asr9k-full-x64-7.9.2 noprompt synchronous
+
+Fri Jan 24 15:35:05.576 UTC
+Jan 24 15:35:07 Install operation 2 started by cisco:
+  install activate pkg asr9k-full-x64-7.9.2 noprompt synchronous 
+Jan 24 15:35:07 Package list:
+Jan 24 15:35:07     asr9k-full-x64-7.9.2
+Jan 24 15:35:12 Action 1: install prepare action started
+Jan 24 15:35:39 The prepared software is set to be activated with reload upgrade
+Jan 24 15:35:40 This install operation will reload the system, continue?
+ [yes/no]:[yes] Jan 24 15:35:40 Start preparing new VM for reload upgrade
+Jan 24 15:35:43 Cannot proceed with system upgrade. 
+ Error! sysadmin does not have enough diskspace in /install/ to proceed.
+Clear up disk space and retry install operation.
+Jan 24 15:35:43 Action 1: install prepare action aborted
+Jan 24 15:35:50 Install operation 2 aborted
+Jan 24 15:35:50 Ending operation 2
+RP/0/RSP0/CPU0:asr9k-2#
+2025-01-24 10:55:14,872 -  nornir.core -     INFO -       main() - Script completed.
+2025-01-24 10:55:14,874 -  nornir.core -     INFO -       main() - Script stop time is 2025-01-24-1029-41

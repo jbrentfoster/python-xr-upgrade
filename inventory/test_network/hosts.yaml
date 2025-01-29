@@ -43,7 +43,7 @@ asr9k-1:
 
 asr9k-2:
   hostname: 172.26.228.238
-  port: 19655
+  port: 10221
   groups:
     - 9k_routers
   connection_options:

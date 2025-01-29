@@ -178,6 +178,7 @@ def configure_CLI(task: Task, commands: list) -> Result:
     )
 
 def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
+    result = False
     pre_check_path = os.path.join(pre_check_root, network_name, current_time)
     logger.info("============================================================")
     logger.info(f"Copying pre-check data to dir: {pre_check_path}")
@@ -195,7 +196,7 @@ def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
             port=task.host.port,
         )
     except Exception as e:
-        logger.info(f"{task.host}: Could not connect to device.")
+        logger.info(f"{task.host}: Could not connect to device. Pre-checks failed.")
         return Result(
             host=task.host,
             result=result
@@ -218,6 +219,10 @@ def run_pre_checks(task: Task, network_name: str, commands: list) -> Result:
         f.writelines(lines)
         f.close()
     my_connection.disconnect()
+    return Result(
+        host=task.host,
+        result=True
+    )
 
 
 def run_copy_file(task: Task) -> Result:
@@ -408,5 +413,4 @@ def backup_configs_ssh(task: Task, network_name: str) -> Result:
 
 
 if __name__ == '__main__':
-    # setup_logging()
     main()
