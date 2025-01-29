@@ -18,6 +18,7 @@ python3 -m venv xrupgrade_venv
 source xrupgrade_venv/bin/activate
 pip install nornir
 pip install nornir-utils
+pip install netmiko
 ```
 ### Install HTTP Server
 ```commandline
