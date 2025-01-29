@@ -51,22 +51,21 @@ def main():
             hostnames_to_filter.append(host)
 
     # Filter hosts based on the list of hostnames
-    filtered_hosts = nr.filter(filter_func=lambda host: host.name in hostnames_to_filter)
-    logger.info("Will upgrade the following routers:")
-    for host, attributes in filtered_hosts.inventory.hosts.items():
-        logger.info(
-            f"\nHost: {host}\n"
-            + f"- Hostname: {attributes.name}\n"
-            + f"- Current OS version: {r[host][0].result}\n"
-            + f"- Target OS version: {nr.inventory.hosts[host]['target_os_ver']}\n"
-            + f"- Device group: {attributes.groups}\n"
-        )
-
+    filtered_hosts = nr.filter(filter_func=lambda tmp_host: tmp_host.name in hostnames_to_filter)
     filtered_hosts_8k = filtered_hosts.filter(F(groups__contains='8k_routers'))
     filtered_hosts_9k = filtered_hosts.filter(F(groups__contains='9k_routers'))
 
     if "8k_routers" in args.upgrade_groups:
-        result = filtered_hosts_8k.run(
+        logger.info("Will upgrade the following 8k routers:")
+        for host, attributes in filtered_hosts_8k.inventory.hosts.items():
+            logger.info(
+                f"\nHost: {host}\n"
+                + f"- Hostname: {attributes.name}\n"
+                + f"- Current OS version: {r[host][0].result}\n"
+                + f"- Target OS version: {nr.inventory.hosts[host]['target_os_ver']}\n"
+                + f"- Device group: {attributes.groups}\n"
+            )
+        result = filtered_hosts_8k.run( #TODO Check if filtered_hosts is empty
             name="Running upgrade tasks",
             task=upgrade,
             network_name=args.network_name,
@@ -74,6 +73,15 @@ def main():
         print_result(result)
 
     if "9k_routers" in args.upgrade_groups:
+        logger.info("Will upgrade the following 9k routers:")
+        for host, attributes in filtered_hosts_9k.inventory.hosts.items():
+            logger.info(
+                f"\nHost: {host}\n"
+                + f"- Hostname: {attributes.name}\n"
+                + f"- Current OS version: {r[host][0].result}\n"
+                + f"- Target OS version: {nr.inventory.hosts[host]['target_os_ver']}\n"
+                + f"- Device group: {attributes.groups}\n"
+            )
         result = filtered_hosts_9k.run(
             name="Running upgrade tasks",
             task=upgrade,
@@ -293,6 +301,7 @@ def run_check_sw_ver(task: Task) -> Result:
 
 
 def run_install(task: Task, install_command: str) -> Result:
+    result = False
     try:
         my_connection = ConnectHandler(
             ip=task.host.hostname,
@@ -322,32 +331,39 @@ def run_install(task: Task, install_command: str) -> Result:
             total_response += device_response
             response_strings = ["completed without error",
                                 "install add action completed successfully",
-                                "activate action completed successfully"
+                                "activate action completed successfully",
+                                "success",
                                 ]
             # Check if the completion message is in the device_response
             if any(response in total_response.lower() for response in response_strings):
                 upgrade_complete = True
+                result=True
                 logger.info(f"{task.host}: Upgrade completed without error.")
             elif "fail" in total_response.lower():
                 upgrade_complete = True
-                logger.info(f"{task.host}: Install failed, check router 'show install request'.")
-            elif count > 200:
+                result=False
+                logger.error(f"{task.host}: Install failed, check router 'show install request'.")
+            elif not my_connection.is_alive():
+                upgrade_complete = True
+                result=True
+                logger.info(f"{task.host}: Device no longer connected, check router 'show install request'.")
+            elif count > 1800:
                 logger.info(f"{task.host}: Time exceeded, exiting install task.")
+                result=False
                 break
             else:
-                if count % 10 == 0:
+                if count % 60 == 0:
                     logger.info(device_response)
                     print(f"{task.host}: Waiting for completion message...")
-                time.sleep(6)  # Wait for 6 seconds before checking again
+                time.sleep(1)  # Wait for 6 seconds before checking again
                 count += 1
         logger.info(total_response)
     else:
-        logger.info(f"{task.host}: Install failed, check router 'show install request'.")
+        logger.error(f"{task.host}: Install failed, check router 'show install request'.")
         additional_response = my_connection.read_channel()
         total_response = device_response + additional_response
         logger.info(total_response)
     my_connection.disconnect()
-    result = upgrade_complete
     return Result(
         host=task.host,
         result=result
