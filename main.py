@@ -148,7 +148,6 @@ def upgrade(task: Task, network_name: str) -> Result:
                     result=f"{task.host} failed to reconnect to device after reload.",
                 )
             r = task.run(
-                host=task.host,
                 name="Pause upgrade while device is rebooting.",
                 task=pause_upgrade,
             )
