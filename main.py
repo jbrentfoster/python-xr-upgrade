@@ -145,8 +145,13 @@ def upgrade(task: Task, network_name: str) -> Result:
             if not r[0].result:
                 return Result(
                     host=task.host,
-                    result=f"{task.host} failed to reconnect.",
+                    result=f"{task.host} failed to reconnect to device after reload.",
                 )
+            r = task.run(
+                host=task.host,
+                name="Pause upgrade while device is rebooting.",
+                task=pause_upgrade,
+            )
     task.run(
         name="Running post-checks.",
         task=run_checks,
@@ -425,7 +430,7 @@ def reconnect(task: Task) -> Result:
 
 
 def pause_upgrade(task: Task) -> Result:
-    logger.info(f"{task.host}: Pausing 2 minutes before checking software version...")
+    logger.info(f"{task.host}: Pausing upgrade for 2 minutes...")
     time.sleep(120)  # Wait for 2 minutes (adjust as necessary)
     return Result(
         host=task.host,
