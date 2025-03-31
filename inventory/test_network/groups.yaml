@@ -15,7 +15,7 @@ defaults:
     xr_7: True
     target_os_ver: 7.9.2
     image_file: 8000-x64-7.9.2.iso
-    http_server_ip: 192.168.122.72
+    http_server_ip: 192.168.122.222
     install_commands:
       - command: "install replace /harddisk:/8000-x64-7.9.2.iso noprompt reload commit synchronous"
         reload: True
@@ -61,7 +61,7 @@ defaults:
     xr_7: True
     target_os_ver: 7.9.2
     image_file: asr9k-full-x64-7.9.2.iso
-    http_server_ip: 192.168.122.72
+    http_server_ip: 192.168.122.79
     install_commands:
 #      - command: "install replace /harddisk:/asr9k-full-x64-7.9.2.iso"
 #        reload: True

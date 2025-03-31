@@ -1,3 +1,21 @@
+"""
+
+Copyright (c) 2025 Cisco and/or its affiliates.
+
+This software is licensed to you under the terms of the Cisco Sample
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
+License at
+
+               https://developer.cisco.com/docs/licenses
+
+All use of the material herein must be in accordance with the terms of
+the License. All rights not expressly granted by the License are
+reserved. Unless required by applicable law or agreed to separately in
+writing, software distributed under the License is distributed on an "AS
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied.
+
+"""
 from nornir import InitNornir
 from nornir.core.task import Task, Result
 from nornir.core.filter import F
@@ -150,6 +168,7 @@ def upgrade(task: Task, network_name: str) -> Result:
             r = task.run(
                 name="Pause upgrade while device is rebooting.",
                 task=pause_upgrade,
+                sleep_time=120 # Wait 2 minutes, adjust as necessary
             )
     task.run(
         name="Running post-checks.",
@@ -247,7 +266,7 @@ def run_checks(task: Task, network_name: str, commands: list, check_type: str) -
         command_responses += f"********************************* {command} *************************************\n"
         command_responses += device_response + "\n"
     pre_check_file = f"{check_path}/{str(task.host.name)}_pre_checks.txt"
-    logger.info(f"DEVICE: {str(task.host.name)} Pre-checks: {pre_check_file}")
+    logger.info(f"DEVICE: {str(task.host.name)} Checks: {pre_check_file}")
     logger.info("============================================================")
     lines = command_responses.splitlines(True)
     with open(pre_check_file, 'a', encoding="utf8") as f:
@@ -276,7 +295,7 @@ def run_copy_file(task: Task) -> Result:
             result=False
         )
     my_connection.find_prompt()
-    copy_command = f"copy http://{task.host['http_server_ip']}/images/{task.host['image_file']} harddisk:"
+    copy_command = f"copy http://{task.host['file_server_ip']}/images/{task.host['image_file']} harddisk:"
     device_response = my_connection.send_command_timing(copy_command, read_timeout=60)
     logger.info(device_response)
     if 'Destination filename' in device_response:
@@ -402,7 +421,7 @@ def reconnect(task: Task) -> Result:
 
         # Try to reconnect
         count = 0
-        while True and count <= 25:
+        while True and count <= 40:
             try:
                 my_connection = ConnectHandler(
                     ip=task.host.hostname,
@@ -428,9 +447,9 @@ def reconnect(task: Task) -> Result:
     )
 
 
-def pause_upgrade(task: Task) -> Result:
+def pause_upgrade(task: Task, sleep_time: int) -> Result:
     logger.info(f"{task.host}: Pausing upgrade for 2 minutes...")
-    time.sleep(120)  # Wait for 2 minutes (adjust as necessary)
+    time.sleep(sleep_time)  # Wait for x seconds (adjust as necessary)
     return Result(
         host=task.host,
         result=True
