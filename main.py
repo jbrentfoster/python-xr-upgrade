@@ -295,11 +295,11 @@ def run_copy_file(task: Task) -> Result:
             result=False
         )
     my_connection.find_prompt()
-    copy_command = f"copy http://{task.host['file_server_ip']}/images/{task.host['image_file']} harddisk:"
-    device_response = my_connection.send_command_timing(copy_command, read_timeout=60)
+    # copy_command = f"copy http://{task.host['file_server_ip']}/images/{task.host['image_file']} harddisk:"
+    device_response = my_connection.send_command_timing(task.host['copy_command'], read_timeout=60)
     logger.info(device_response)
     if 'Destination filename' in device_response:
-        device_response += my_connection.send_command_timing('\r', read_timeout=300)
+        device_response += my_connection.send_command_timing('\r', read_timeout=3000)
     logger.info(device_response)
     if "success" in device_response.lower():
         result = True

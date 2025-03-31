@@ -9,7 +9,7 @@ Before using for production purposes:
 ## Setup
 ### Clone the repo
 ```commandline
-git clone https://wwwin-github.cisco.com/brfoster/python-xr-upgrade.git
+git clone https://github.com/jbrentfoster/python-xr-upgrade.git
 ```
 ### Add python virtual environment and install Nornir
 ```
