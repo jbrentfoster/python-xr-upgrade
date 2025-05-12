@@ -59,7 +59,8 @@ defaults:
   data:
     xr_7: True
     target_os_ver: 7.9.2
-    copy_command: "copy tftp://192.168.122.162/asr9k-full-x64-7.9.2.iso harddisk:"
+#    copy_command: "copy tftp://192.168.122.162/asr9k-full-x64-7.9.2.iso harddisk:"
+    copy_command: "scp vxr@192.168.122.121://home/vxr/asr9k-full-x64-7.9.2.iso /misc/disk1/."
     install_commands:
 #      - command: "install replace /harddisk:/asr9k-full-x64-7.9.2.iso"
 #        reload: True
