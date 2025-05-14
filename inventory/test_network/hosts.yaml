@@ -28,8 +28,8 @@ c8k-2:
     hostname: c8k-2
 
 asr9k-1:
-  hostname: 172.26.228.238
-  port: 12271
+  hostname: 172.26.228.228
+  port: 10267
   groups:
     - 9k_routers
   connection_options:

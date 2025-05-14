@@ -300,7 +300,7 @@ def run_copy_file(task: Task) -> Result:
     if 'Destination filename' in device_response:
         device_response += my_connection.send_command_timing('\r', read_timeout=3000)
     elif 'Password' in device_response:
-        device_response += my_connection.send_command_timing(f"{task.host.password}\r", read_timeout=3000)
+        device_response += my_connection.send_command_timing(f"{task.host['file_server_password']}\r", read_timeout=3000)
 
     response_strings = ["success",
                         "bytes copied"
