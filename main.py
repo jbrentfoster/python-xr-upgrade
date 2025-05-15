@@ -126,11 +126,16 @@ def upgrade(task: Task, network_name: str) -> Result:
     #     commands=task.host['pre_check_commands'],
     #     check_type="pre_check"
     # )
-    r = task.run(
-        name="Copy image file to the router.",
-        # task=run_copy_file,
-        task=copy_file_local_scp
-    )
+    if task.host["local_scp_option"]:
+        r = task.run(
+            name="Copy local image file to the router.",
+            task=copy_file_local_scp
+        )
+    else:
+        r = task.run(
+            name="Copy image file to the router from remote file server.",
+            task=run_copy_file,
+        )
     if not r[0].result:
         return Result(
             host=task.host,
