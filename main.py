@@ -21,6 +21,7 @@ from nornir.core.task import Task, Result
 from nornir.core.filter import F
 from nornir_utils.plugins.functions import print_result
 from netmiko import Netmiko, ConnectHandler, file_transfer, SCPConn
+from netmiko.cisco_base_connection import CiscoBaseConnection, CiscoFileTransfer
 from datetime import datetime
 import logging
 import time
@@ -113,21 +114,22 @@ def main():
 
 
 def upgrade(task: Task, network_name: str) -> Result:
-    task.run(
-        name="Backing up router configurations.",
-        task=backup_configs_ssh,
-        network_name=network_name,
-    )
-    task.run(
-        name="Running pre-checks.",
-        task=run_checks,
-        network_name=args.network_name,
-        commands=task.host['pre_check_commands'],
-        check_type="pre_check"
-    )
+    # task.run(
+    #     name="Backing up router configurations.",
+    #     task=backup_configs_ssh,
+    #     network_name=network_name,
+    # )
+    # task.run(
+    #     name="Running pre-checks.",
+    #     task=run_checks,
+    #     network_name=args.network_name,
+    #     commands=task.host['pre_check_commands'],
+    #     check_type="pre_check"
+    # )
     r = task.run(
         name="Copy image file to the router.",
-        task=run_copy_file,
+        # task=run_copy_file,
+        task=copy_file_local_scp
     )
     if not r[0].result:
         return Result(
@@ -320,6 +322,35 @@ def run_copy_file(task: Task) -> Result:
         result=result
     )
 
+def copy_file_local_scp(task: Task) -> Result:
+    try:
+        my_connection = ConnectHandler(
+            ip=task.host.hostname,
+            username=task.host.username,
+            password=task.host.password,
+            device_type='cisco_xr',
+            port=task.host.port,
+        )
+    except Exception as e:
+        logger.info(f"{task.host}: Could not connect to device. Failed to copy image file.")
+        return Result(
+            host=task.host,
+            result=False
+        )
+    # scp_conn = SCPConn(my_connection,socket_timeout= 1500.0)
+    scp_conn = SCPConn(my_connection)
+    try:
+        scp_conn.scp_transfer_file(task.host["image_file"], "harddisk:/.")
+        logger.info(f"{task.host}: Transfer successful.")
+        result = True
+    except Exception as e:
+        logger.error(f"{task.host}: Transfer failed.")
+        logger.error(e)
+        result = False
+    return Result(
+        host=task.host,
+        result=result
+    )
 
 def run_check_sw_ver(task: Task) -> Result:
     result = "unknown"
